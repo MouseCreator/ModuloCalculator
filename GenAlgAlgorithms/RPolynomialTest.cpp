@@ -12,7 +12,7 @@
 //Using Gorner rule
 TEST_CASE("Value at X") {
 	std::ifstream f;
-	f.open("../RPolynomial/Value at X.txt");
+	f.open("RPolynomial/Value at X.txt");
 	std::string polinomial1Str, polinomial2Str, polinomial3Str;
 	f >> polinomial1Str >> polinomial2Str >> polinomial3Str;
 	RPolynomial polinomial = RPolynomial(polinomial1Str);
@@ -27,7 +27,7 @@ TEST_CASE("Value at X") {
 //Test and implementation by M. Tyshchenko
 TEST_CASE("Derivative") {
 	std::ifstream f;
-	f.open("../RPolynomial/Derivative.txt");
+	f.open("RPolynomial/Derivative.txt");
 	std::string polinomial1Str, polinomial2Str, polinomial3Str;
 	f >> polinomial1Str >> polinomial2Str >> polinomial3Str;
 
@@ -48,7 +48,7 @@ TEST_CASE("Derivative") {
 TEST_CASE("Addition")
 {
 	std::ifstream f;
-	f.open("../RPolynomial/Addition.txt");
+	f.open("RPolynomial/Addition.txt");
 	std::string polinomial1Str, polinomial2Str, polinomial3Str;
 	f >> polinomial1Str >> polinomial2Str;
 	RPolynomial polinomial = RPolynomial(polinomial1Str),
@@ -90,7 +90,7 @@ TEST_CASE("Addition")
 TEST_CASE("Substraction")
 {
 	std::ifstream f;
-	f.open("../RPolynomial/Substraction.txt");
+	f.open("RPolynomial/Substraction.txt");
 	std::string polinomial1Str, polinomial2Str;
 	f >> polinomial1Str >> polinomial2Str;
 	RPolynomial polinomial = RPolynomial(polinomial1Str),
@@ -131,7 +131,7 @@ TEST_CASE("Substraction")
 TEST_CASE("Multiplication")
 {
 	std::ifstream f;
-	f.open("../RPolynomial/Multiplication.txt");
+	f.open("RPolynomial/Multiplication.txt");
 	std::string polinomial1Str, polinomial2Str;
 	f >> polinomial1Str >> polinomial2Str;
 	RPolynomial polinomial = RPolynomial(polinomial1Str),
@@ -162,14 +162,12 @@ TEST_CASE("Multiplication")
 
 }
 
-
-//Test implementation by V.Horbanov
 TEST_CASE("Division")
 {
 
 
 	std::ifstream f;
-	f.open("../RPolynomial/Division.txt");
+	f.open("RPolynomial/Division.txt");
 	std::string polinomial1Str, polinomial2Str;
 	f >> polinomial1Str >> polinomial2Str;
 	RPolynomial pol1 = RPolynomial(polinomial1Str),
@@ -208,7 +206,7 @@ TEST_CASE("Remainder")
 {
 
 	std::ifstream f;
-	f.open("../RPolynomial/Remainder.txt");
+	f.open("RPolynomial/Remainder.txt");
 	std::string polinomial1Str, polinomial2Str;
 	f >> polinomial1Str >> polinomial2Str;
 	RPolynomial pol1 = RPolynomial(polinomial1Str),
@@ -246,7 +244,7 @@ TEST_CASE("GCD")
 {
 
 	std::ifstream f;
-	f.open("../RPolynomial/GCD.txt");
+	f.open("RPolynomial/GCD.txt");
 	std::string polinomial1Str, polinomial2Str;
 	f >> polinomial1Str >> polinomial2Str;
 	RPolynomial pol1 = RPolynomial(polinomial1Str),

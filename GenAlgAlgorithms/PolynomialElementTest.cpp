@@ -13,7 +13,7 @@ TEST_SUITE("PolynomialElement")
 		SUBCASE("SignedNumber")
 		{
 			std::ifstream f;
-			f.open("../PolynomialElement/AdditionSignedNumber.txt");
+			f.open("PolynomialElement/AdditionSignedNumber.txt");
 			std::string elem1StrS;
 			std::string elem1StrP;
 			std::string elem2StrS;
@@ -34,7 +34,7 @@ TEST_SUITE("PolynomialElement")
 		SUBCASE("FiniteNumber")
 		{
 			std::ifstream f;
-			f.open("../PolynomialElement/AdditionFiniteNumber.txt");
+			f.open("PolynomialElement/AdditionFiniteNumber.txt");
 			std::string elem1StrS;
 			std::string elem1StrP;
 			std::string elem2StrS;
@@ -63,7 +63,7 @@ TEST_SUITE("PolynomialElement")
 		SUBCASE("SignedNumber")
 		{
 			std::ifstream f;
-			f.open("../PolynomialElement/SubstractionSignedNumber.txt");
+			f.open("PolynomialElement/SubstractionSignedNumber.txt");
 			std::string elem1StrS;
 			std::string elem1StrP;
 			std::string elem2StrS;
@@ -85,7 +85,7 @@ TEST_SUITE("PolynomialElement")
 		SUBCASE("FiniteNumber")
 		{
 			std::ifstream f;
-			f.open("../PolynomialElement/SubstractionFiniteNumber.txt");
+			f.open("PolynomialElement/SubstractionFiniteNumber.txt");
 			std::string elem1StrS;
 			std::string elem1StrP;
 			std::string elem2StrS;
@@ -112,7 +112,7 @@ TEST_SUITE("PolynomialElement")
 		SUBCASE("SignedNumber")
 		{
 			std::ifstream f;
-			f.open("../PolynomialElement/ProductSignedNumber.txt");
+			f.open("PolynomialElement/ProductSignedNumber.txt");
 			std::string elem1StrS;
 			std::string elem1StrP;
 			std::string elem2StrS;
@@ -132,7 +132,7 @@ TEST_SUITE("PolynomialElement")
 		SUBCASE("FiniteNumber")
 		{
 			std::ifstream f;
-			f.open("../PolynomialElement/ProductFiniteNumber.txt");
+			f.open("PolynomialElement/ProductFiniteNumber.txt");
 			std::string elem1StrS;
 			std::string elem1StrP;
 			std::string elem2StrS;

@@ -25,7 +25,7 @@
 TEST_CASE("Positive numbers") {
 	std::cout << "Positive numbers" << std::endl;
 	std::ifstream f;
-	f.open("../Positive numbers Test.txt");
+	f.open("Positive numbers Test.txt");
 
 	//PositiveNumber a = PositiveNumber("1234");
 	//PositiveNumber b = PositiveNumber("99");
@@ -46,7 +46,7 @@ TEST_CASE("Positive numbers") {
 TEST_CASE("Division Test for PositiveNumber") {
 	std::cout << "Division Test for PositiveNumber" << std::endl;
 	std::ifstream f;
-	f.open("../Division Test for PositiveNumber.txt");
+	f.open("Division Test for PositiveNumber.txt");
 	std::string p1Str, p2Str;
 	f >> p1Str >> p2Str;
 
@@ -70,7 +70,7 @@ TEST_CASE("Division Test for PositiveNumber") {
 TEST_CASE("Division Test for SignedNumber") {
 	std::cout << "Division Test for SignedNumber" << std::endl;
 	std::ifstream f;
-	f.open("../Division Test for SignedNumber.txt");
+	f.open("Division Test for SignedNumber.txt");
 	std::string p1Str, p2Str;
 	f >> p1Str >> p2Str;
 	SignedNumber p1(p1Str);
@@ -98,7 +98,7 @@ TEST_CASE("Division Test for SignedNumber") {
 TEST_CASE("Remainder Test for Positive Numbers") {
 	std::cout << "Remainder Test for Positive Numbers" << std::endl;
 	std::ifstream f;
-	f.open("../Remainder Test for Positive Numbers.txt");
+	f.open("Remainder Test for Positive Numbers.txt");
 	std::string p1Str, p2Str;
 	f >> p1Str >> p2Str;
 
@@ -123,7 +123,7 @@ TEST_CASE("Remainder Test for Positive Numbers") {
 TEST_CASE("Remainder Test for Signed Numbers") {
 	std::cout << "Remainder Test for Signed Numbers" << std::endl;
 	std::ifstream f;
-	f.open("../Remainder Test for Signed Numbers.txt");
+	f.open("Remainder Test for Signed Numbers.txt");
 	std::string p1Str, p2Str;
 	f >> p1Str >> p2Str;
 	SignedNumber p1(p1Str);
@@ -170,7 +170,7 @@ TEST_CASE("Test on random numbers") {
 TEST_CASE("Signed numbers") {
 	std::cout << "Signed numbers" << std::endl;
 	std::ifstream f;
-	f.open("../Signed numbers Test.txt");
+	f.open("Signed numbers Test.txt");
 	std::string finiteStr, signedNStr, signedMStr,aStr,bStr;
 	getline(f, finiteStr);
 	f >> signedNStr >> signedMStr>>aStr>>bStr;
@@ -195,7 +195,7 @@ TEST_CASE("Signed numbers") {
 TEST_CASE("Finite numbers") {
 	std::cout << "Finite numbers" << std::endl;
 	std::ifstream f;
-	f.open("../Finite numbers Tests.txt");
+	f.open("Finite numbers Tests.txt");
 	std::string fin1Str, fin2Str,origStr;
 	getline(f, fin1Str);
 	getline(f, fin2Str);
@@ -270,7 +270,7 @@ TEST_CASE("Finite numbers") {
 TEST_CASE("Test zero") {
 	std::cout << "Test zero" << std::endl;
 	std::ifstream f;
-	f.open("../Test zero.txt");
+	f.open("Test zero.txt");
 	std::string zeroStr, aStr, bStr;
 	f >> zeroStr >> aStr >> bStr;
 	PositiveNumber zero = PositiveNumber(zeroStr);
@@ -285,7 +285,7 @@ TEST_CASE("Test zero") {
 TEST_CASE("Exponent") {
 	std::cout << "Exponent" << std::endl;
 	std::ifstream f;
-	f.open("../Exponent Test.txt");
+	f.open("Exponent Test.txt");
 	std::string nStr, mStr, aNStr, toMultiplyStr, toMultiply2Str,baseStr,powerStr;
 	getline(f, nStr);
 	getline(f, mStr);
@@ -345,15 +345,7 @@ TEST_CASE("Exponent") {
 	begin = std::chrono::steady_clock::now();
 	CHECK(exp.fastExponentiation(base, power).toString() == expected);
 	end = std::chrono::steady_clock::now();
-	//std::cout << "Fast = " << std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count() << " ms" << std::endl;
-
-	//begin = std::chrono::steady_clock::now();
-	//CHECK(exp.slowExponention(base, power).toString() == expected);
-	//end = std::chrono::steady_clock::now();
-	//std::cout << "Slow = " << std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count() << " ms" << std::endl;
 	f.close();
-
-
 
 	base = FiniteNumber("x5 9");
 	power = PositiveNumber("1");
@@ -399,7 +391,7 @@ TEST_CASE("Exponentiation on random values") {
 TEST_CASE("Test binary form") {
 	std::cout << "Test binary form" << std::endl;
 	std::ifstream f;
-	f.open("../Test binary form.txt");
+	f.open("Test binary form.txt");
 	std::string aStr;
 	f >> aStr;
 	CHECK(PositiveNumber(aStr).bits() == "101");
@@ -528,7 +520,7 @@ TEST_CASE("Test isGenerator method") {
 TEST_CASE("Test Integer Constuctors") {
 	std::cout << "Test Integer Constuctors" << std::endl;
 	std::ifstream f;
-	f.open("../Test Integer Constuctors.txt");
+	f.open("Test Integer Constuctors.txt");
 	std::string aStr, bStr;
 	f >> aStr >> bStr;
 	int aInt = std::stoi(aStr);
@@ -545,7 +537,7 @@ TEST_CASE("Test Integer Constuctors") {
 TEST_CASE("Additional operators test") {
 	std::cout << "Additional operators test" << std::endl;
 	std::ifstream f;
-	f.open("../Additional operators test.txt");
+	f.open("Additional operators test.txt");
 	std::string aStr, bStr,cStr,dStr;
 	getline(f, aStr);
 	getline(f, bStr);
@@ -564,7 +556,7 @@ TEST_CASE("Additional operators test") {
 TEST_CASE("Additional operators") {
 	std::cout << "Additional operators" << std::endl;
 	std::ifstream f;
-	f.open("../Additional operators.txt");
+	f.open("Additional operators.txt");
 	std::string aStr, bStr;
 	getline(f, aStr);
 	getline(f, bStr);
@@ -580,7 +572,7 @@ TEST_CASE("Additional operators") {
 TEST_CASE("Modular Power") {
 	std::cout << "Modular Power" << std::endl;
 	std::ifstream f;
-	f.open("../Modular Power.txt");
+	f.open("Modular Power.txt");
 	std::string aStr, bStr,cStr;
 	getline(f, aStr);
 	getline(f, bStr);
@@ -595,7 +587,7 @@ TEST_CASE("Modular Power") {
 TEST_CASE("Miller-Rabin Primality Test") {
 	std::cout << "Miller-Rabin Primality Test" << std::endl;
 	std::ifstream f;
-	f.open("../Miller-Rabin Primality Test.txt");
+	f.open("Miller-Rabin Primality Test.txt");
 	std::string aStr;
 	f >> aStr;
 	CHECK(!MillerRabin::miller_rabin(PositiveNumber(aStr)));
@@ -638,7 +630,7 @@ TEST_CASE("Miller-Rabin Primality Test") {
 TEST_CASE("Naive Factorization") {
 	std::cout << "Naive Factorization" << std::endl;
 	std::ifstream f;
-	f.open("../Naive Factorization.txt");
+	f.open("Naive Factorization.txt");
 	std::string a1Str,a2Str,a3Str;
 	f >> a1Str >> a2Str >> a3Str;
 	PositiveNumber a1 = PositiveNumber(a1Str);
@@ -669,7 +661,7 @@ TEST_CASE("Naive Factorization") {
 TEST_CASE("Pollard's Rho Factorization") {
 	std::cout << "Pollard's Rho Factorization" << std::endl;
 	std::ifstream f;
-	f.open("../Pollard's Rho Factorization.txt");
+	f.open("Pollard's Rho Factorization.txt");
 	std::string a1Str, a2Str, a3Str;
 	f >> a1Str >> a2Str >> a3Str;
 	PositiveNumber a1 = PositiveNumber(a1Str);
@@ -700,7 +692,7 @@ TEST_CASE("Euler For Prime Values")
 {
 	std::cout << "Euler For Prime Values" << std::endl;
 	std::ifstream f;
-	f.open("../Euler For Prime Values.txt");
+	f.open("Euler For Prime Values.txt");
 	std::string value1Str, value2Str, degree2Str;
 	f >> value1Str >> value2Str >> degree2Str;
 
@@ -720,7 +712,7 @@ TEST_CASE("Euler")
 {
 	std::cout << "Euler" << std::endl;
 	std::ifstream f;
-	f.open("../Euler.txt");
+	f.open("Euler.txt");
 	std::string value1Str, value2Str, value3Str, value4Str;
 	f >> value1Str >> value2Str >> value3Str >> value4Str;
 	PositiveNumber value1(value1Str);
@@ -739,7 +731,7 @@ TEST_CASE("Carmichel")
 {
 	std::cout << "Carmichel" << std::endl;
 	std::ifstream f;
-	f.open("../Carmichel.txt");
+	f.open("Carmichel.txt");
 	std::string value1Str, value2Str, value3Str, value4Str;
 	f >> value1Str >> value2Str >> value3Str >> value4Str;
 	PositiveNumber value1("9");
@@ -757,7 +749,7 @@ TEST_CASE("Carmichel")
 TEST_CASE("Scan_Parse_OK")
 {
 	bool isOpened = false;
-	std::string filename = "../scan_parse.txt";
+	std::string filename = "scan_parse.txt";
 	std::istringstream stream = loadTestFile(filename, isOpened);
 	CHECK(isOpened == true);
 	MathBase::Interpreter i;
@@ -773,7 +765,7 @@ TEST_CASE("Scan_Parse_OK")
 TEST_CASE("Reusable interpretation manager OK")
 {
 	bool isOpened = false;
-	std::string filename = "../interpreter.txt";
+	std::string filename = "interpreter.txt";
 	std::vector<std::string> lines = readLines(filename, isOpened);
 	InterpretationManager interpretationManager;
 	merr::Errors errors;
@@ -791,7 +783,7 @@ TEST_CASE("Reusable interpretation manager OK")
 TEST_CASE("Executor. Simple finite Field calculation OK")
 {
 	bool isOpened = false;
-	std::string filename = "../EXECUTE_simple.txt";
+	std::string filename = "EXECUTE_simple.txt";
 	std::vector<std::string> lines = readLines(filename, isOpened);
 	Executor exec;
 	std::string baseStr = lines[0];
@@ -809,7 +801,7 @@ TEST_CASE("Executor. Simple finite Field calculation OK")
 
 TEST_CASE("Executor. Complex finite Field calculation")
 {
-	std::string filename = "../EXECUTE_complex.txt";
+	std::string filename = "EXECUTE_complex.txt";
 	TestEngineFiniteField engine;
 	TestExecutionResult res = engine.execute(filename);
 	CHECK_MESSAGE(res.success() == true, res.str());
