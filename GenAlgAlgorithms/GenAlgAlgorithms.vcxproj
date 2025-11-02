@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <ProjectGuid>{202033EC-BDB8-9B75-AF34-990B88BC7E82}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>Level3</WarningLevel>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PreprocessorDefinitions>NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="FPolynomialTest.cpp" />
+    <ClCompile Include="mathbase\AST_ContextType.cpp" />
+    <ClCompile Include="mathbase\AST_FiniteFieldCalculator.cpp" />
+    <ClCompile Include="mathbase\AST_GenericVisitor.cpp" />
+    <ClCompile Include="mathbase\AST_IntegerCalculator.cpp" />
+    <ClCompile Include="mathbase\CalculationOfSquareRoot.cpp" />
+    <ClCompile Include="mathbase\Euler.cpp" />
+    <ClCompile Include="mathbase\Executor.cpp" />
+    <ClCompile Include="mathbase\FactorizationEngine.cpp" />
+    <ClCompile Include="mathbase\FactorizationResult.cpp" />
+    <ClCompile Include="mathbase\GCD.cpp" />
+    <ClCompile Include="mathbase\InterpretationManager.cpp" />
+    <ClCompile Include="mathbase\Logarithm.cpp" />
+    <ClCompile Include="mathbase\merr\errloc.cpp" />
+    <ClCompile Include="mathbase\merr\ErrorManager.cpp" />
+    <ClCompile Include="mathbase\merr\errpick.cpp" />
+    <ClCompile Include="mathbase\merr\MathError.cpp" />
+    <ClCompile Include="mathbase\merr\MathErrorType.cpp" />
+    <ClCompile Include="mathbase\OrderEngine.cpp" />
+    <ClCompile Include="mathbase\parse\AST_Core.cpp" />
+    <ClCompile Include="mathbase\parse\AST_Operation.cpp" />
+    <ClCompile Include="mathbase\parse\command.cpp" />
+    <ClCompile Include="mathbase\parse\interpreter.cpp" />
+    <ClCompile Include="mathbase\parse\parser.cpp" />
+    <ClCompile Include="mathbase\parse\scanner.cpp" />
+    <ClCompile Include="mathbase\PrimeGenerator.cpp" />
+    <ClCompile Include="mathbase\PrimeTestEngine.cpp" />
+    <ClCompile Include="mathbase\RNG.cpp" />
+    <ClCompile Include="mathbase\utils\StringPrintable.cpp" />
+    <ClCompile Include="mathbase\utils\StringUtils.cpp" />
+    <ClCompile Include="mathbase\utils\TestEngineFiniteField.cpp" />
+    <ClCompile Include="mathbase\utils\TestEngineUtils.cpp" />
+    <ClCompile Include="mathbase\utils\TestUtils.cpp" />
+    <ClCompile Include="mathbase\utils\Validate.cpp" />
+    <ClCompile Include="mathbase\Wrapper.cpp" />
+    <ClCompile Include="PolynomialElementTest.cpp" />
+    <ClCompile Include="RPolynomialTest.cpp" />
+    <ClCompile Include="tests.cpp" />
+    <ClCompile Include="TrueFPolynomialTest.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="doctest.h" />
+    <ClInclude Include="mathbase\AST_Context_Type.h" />
+    <ClInclude Include="mathbase\AST_FiniteFieldCalculator.h" />
+    <ClInclude Include="mathbase\AST_Generic_Visitor.h" />
+    <ClInclude Include="mathbase\AST_Integer_Calculator.h" />
+    <ClInclude Include="mathbase\CalculationOfSquareRoot.h" />
+    <ClInclude Include="mathbase\Euler.h" />
+    <ClInclude Include="mathbase\Executor.h" />
+    <ClInclude Include="mathbase\Exponent.h" />
+    <ClInclude Include="mathbase\FactorizationEngine.h" />
+    <ClInclude Include="mathbase\FactorizationResult.h" />
+    <ClInclude Include="mathbase\Field.h" />
+    <ClInclude Include="mathbase\FiniteField.h" />
+    <ClInclude Include="mathbase\FiniteGroup.h" />
+    <ClInclude Include="mathbase\FiniteNumber.h" />
+    <ClInclude Include="mathbase\FPolynomial.h" />
+    <ClInclude Include="mathbase\GCD.h" />
+    <ClInclude Include="mathbase\Generic_Math.h" />
+    <ClInclude Include="mathbase\InterpretationManager.h" />
+    <ClInclude Include="mathbase\Logarithm.h" />
+    <ClInclude Include="mathbase\merr\errloc.h" />
+    <ClInclude Include="mathbase\merr\ErrorManager.h" />
+    <ClInclude Include="mathbase\merr\errpick.h" />
+    <ClInclude Include="mathbase\merr\MathError.h" />
+    <ClInclude Include="mathbase\merr\MathErrorType.h" />
+    <ClInclude Include="mathbase\Message.h" />
+    <ClInclude Include="mathbase\MillerRabin.h" />
+    <ClInclude Include="mathbase\OrderEngine.h" />
+    <ClInclude Include="mathbase\parse\AST_Core.h" />
+    <ClInclude Include="mathbase\parse\AST_Operation.h" />
+    <ClInclude Include="mathbase\parse\command.h" />
+    <ClInclude Include="mathbase\parse\FlexLexer.h" />
+    <ClInclude Include="mathbase\parse\Header.h" />
+    <ClInclude Include="mathbase\parse\interpreter.h" />
+    <ClInclude Include="mathbase\parse\location.hh" />
+    <ClInclude Include="mathbase\parse\parser.hpp" />
+    <ClInclude Include="mathbase\parse\position.hh" />
+    <ClInclude Include="mathbase\parse\scanner.h" />
+    <ClInclude Include="mathbase\parse\stack.hh" />
+    <ClInclude Include="mathbase\Pollard.h" />
+    <ClInclude Include="mathbase\Polynomial.h" />
+    <ClInclude Include="mathbase\PolynomialElement.h" />
+    <ClInclude Include="mathbase\PositiveNumber.h" />
+    <ClInclude Include="mathbase\PrimeGenerator.h" />
+    <ClInclude Include="mathbase\PrimeTestEngine.h" />
+    <ClInclude Include="mathbase\RNG.h" />
+    <ClInclude Include="mathbase\RPolynomial.h" />
+    <ClInclude Include="mathbase\SignedNumber.h" />
+    <ClInclude Include="mathbase\TrueFPolynomial.h" />
+    <ClInclude Include="mathbase\utils\StringPrintable.h" />
+    <ClInclude Include="mathbase\utils\StringUtils.h" />
+    <ClInclude Include="mathbase\utils\TestEngineFiniteField.h" />
+    <ClInclude Include="mathbase\utils\TestEngineUtils.h" />
+    <ClInclude Include="mathbase\utils\TestUtils.h" />
+    <ClInclude Include="mathbase\utils\Validate.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
