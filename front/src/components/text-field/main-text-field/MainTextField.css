@@ -1,0 +1,15 @@
+.main-text-field {
+    margin-top: 40px;
+    font-weight: 600;
+    font-size: 32px;
+    color: #1ABC9C;
+}
+
+.main-text-before-dash {
+    color: #1ABC9C;
+}
+
+.main-text-after-dash {
+    color: white;
+    font-size: 24px;
+}
