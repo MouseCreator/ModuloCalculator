@@ -98,7 +98,8 @@ bool Interpreter::hasError() {
 }
 void Interpreter::setError(std::string type, std::string error) {
     merr::MathErrorType mathErrorType = merr::toErrorType(type);
-    merr::MathError mathError = merr::MathError(mathErrorType, error, &locationStruct());
+    merr::LocationStruct loc = locationStruct();
+    merr::MathError mathError = merr::MathError(mathErrorType, error, &loc);
     m_errorFlag.set(mathError);
 }
 void Interpreter::clrError() {

@@ -1,6 +1,5 @@
 #pragma once
 
-#pragma once
 #include <iostream>
 #include "errloc.h"
 #include "../utils/StringPrintable.h"

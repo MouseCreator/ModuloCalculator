@@ -19,7 +19,7 @@ public:
 	OperationNode(ASTNode* left, std::string op, ASTNode* right, merr::LocationStruct location);
 	~OperationNode();
 	std::string str() override;
-	merr::LocationStruct loc() override;
+	merr::LocationStruct& loc() override;
 	void acceptVisitor(ASTVisitor* visitor) override;
 };
 
@@ -33,7 +33,7 @@ public:
 	ComparisonNode(ASTNode* left, std::string operation, ASTNode* right, merr::LocationStruct location);
 	~ComparisonNode();
 	std::string str() override;
-	merr::LocationStruct loc() override;
+	merr::LocationStruct& loc() override;
 	void acceptVisitor(ASTVisitor* visitor) override;
 };
 
@@ -46,7 +46,7 @@ public:
 	UnaryNode(std::string operation, ASTNode* target, merr::LocationStruct location);
 	~UnaryNode();
 	std::string str() override;
-	merr::LocationStruct loc() override;
+	merr::LocationStruct& loc() override;
 	void acceptVisitor(ASTVisitor* visitor) override;
 };
 
@@ -59,7 +59,7 @@ public:
 	std::string digits;
 	NumberNode(std::string digits, merr::LocationStruct location);
 	std::string str() override;
-	merr::LocationStruct loc() override;
+	merr::LocationStruct& loc() override;
 	void acceptVisitor(ASTVisitor* visitor) override;
 };
 class VariableNode : public ValueNode {
@@ -69,7 +69,7 @@ public:
 	std::string var_name;
 	VariableNode(std::string var_name, merr::LocationStruct location);
 	std::string str() override;
-	merr::LocationStruct loc() override;
+	merr::LocationStruct& loc() override;
 	void acceptVisitor(ASTVisitor* visitor) override;
 };
 class FunctionNode : public ASTNode {
@@ -78,7 +78,7 @@ private:
 public:
 	std::string functionName;
 	std::vector<ASTNode*> arguments;
-	merr::LocationStruct loc() override;
+	merr::LocationStruct& loc() override;
 
 	std::size_t num_argumnets();
 	FunctionNode(std::string name, std::vector<ASTNode*> arguments, merr::LocationStruct location);

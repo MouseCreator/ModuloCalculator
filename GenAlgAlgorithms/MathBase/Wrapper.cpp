@@ -70,12 +70,12 @@ extern "C" char* finite_field(const char* expression, const char* n, char* error
         else {
             errors.addError(picker);
         }
+        resStr = new char[MAX_MESSAGE_LENGTH];
         if (errors.hasError()) {
             strcpy(errorStr, errors.concat().c_str());
-            return "";
+            resStr[0] = '\0';
+            return resStr;
         }
-        resStr = new char[MAX_MESSAGE_LENGTH];
-        
         strcpy(resStr, resultString.c_str());
     }
     catch (const std::exception& ex)

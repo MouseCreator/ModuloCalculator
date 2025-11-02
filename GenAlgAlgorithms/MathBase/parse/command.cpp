@@ -15,7 +15,7 @@ namespace MathBase {
 	std::string OperationNode::str() {
 		return "(" + left->str() + operation + right->str() + ")";
 	}
-	merr::LocationStruct OperationNode::loc() {
+	merr::LocationStruct& OperationNode::loc() {
 		return m_loc;
 	}
 
@@ -33,7 +33,7 @@ namespace MathBase {
 		delete left;
 		delete right;
 	}
-	merr::LocationStruct ComparisonNode::loc() {
+	merr::LocationStruct& ComparisonNode::loc() {
 		return m_loc;
 	}
 	void ComparisonNode::acceptVisitor(ASTVisitor* visitor) {
@@ -49,7 +49,7 @@ namespace MathBase {
 		this->operation = operation;
 		this->m_loc = location;
 	}
-	merr::LocationStruct UnaryNode::loc() {
+	merr::LocationStruct& UnaryNode::loc() {
 		return m_loc;
 	}
 	std::string UnaryNode::str() {
@@ -72,7 +72,7 @@ namespace MathBase {
 	void NumberNode::acceptVisitor(ASTVisitor* visitor) {
 		visitor->visitNumber(*this);
 	}
-	merr::LocationStruct NumberNode::loc() {
+	merr::LocationStruct& NumberNode::loc() {
 		return m_loc;
 	}
 	VariableNode::VariableNode(std::string var_name, merr::LocationStruct location) {
@@ -85,7 +85,7 @@ namespace MathBase {
 	void VariableNode::acceptVisitor(ASTVisitor* visitor) {
 		visitor->visitVariable(*this);
 	}
-	merr::LocationStruct VariableNode::loc() {
+	merr::LocationStruct& VariableNode::loc() {
 		return m_loc;
 	}
 	std::size_t FunctionNode::num_argumnets() {
@@ -102,7 +102,7 @@ namespace MathBase {
 	bool FunctionNode::isNamed(std::string expected_name) {
 		return expected_name == functionName;
 	}
-	merr::LocationStruct FunctionNode::loc() {
+	merr::LocationStruct& FunctionNode::loc() {
 		return m_loc;
 	}
 	std::string FunctionNode::str() {

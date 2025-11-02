@@ -9,7 +9,7 @@ namespace MathBase {
 		virtual std::string str() = 0;
 		virtual ~ASTNode() {}
 		virtual void acceptVisitor(ASTVisitor* visitor) = 0;
-		virtual merr::LocationStruct loc() = 0;
+		virtual merr::LocationStruct& loc() = 0;
 	};
 
 	class AST {
