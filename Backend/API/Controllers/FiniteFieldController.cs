@@ -40,7 +40,7 @@ namespace API.Controllers
             }
 
             string errorStr = string.Empty;
-            var result = FiniteFieldWrapper.GenerateRandomNumber(request.min, request.min, ref errorStr);
+            var result = FiniteFieldWrapper.generate_random_prime(ref errorStr);
             var resultDict = new Dictionary<string, string>
             {
                 { "result", result}
@@ -105,7 +105,7 @@ namespace API.Controllers
             }
 
             string errorStr = string.Empty;
-            var result = FiniteFieldWrapper.random_number(request.min, request.max, ref errorStr);
+            var result = FiniteFieldWrapper.random_number(ref errorStr);
             var resultDict = new Dictionary<string, string>
             {
                 { "result", result}

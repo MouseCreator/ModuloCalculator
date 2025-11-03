@@ -24,7 +24,7 @@ if (signedNumber.isZero()) {
 }
 }
 
-extern "C" char* random_prime(const char* min, const char* max, char* errorStr)
+extern "C" char* random_prime(char* errorStr)
 {
     char* resStr = nullptr;
     try
@@ -164,7 +164,7 @@ extern "C" char* number_order(const char* number, const char* n, char* errorStr)
     return resStr;
 }
 
-extern "C" char* random_number(const char* min, const char* max, char* errorStr)
+extern "C" char* random_number(char* errorStr)
 {
     char* resStr = nullptr;
     try

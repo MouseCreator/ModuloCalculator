@@ -50,21 +50,15 @@ public class FiniteFieldWrapper
     }
     
     
-    public static unsafe string GenerateRandomNumber(string min, string max, ref string errStr)
+    public static unsafe string generate_random_prime(ref string errStr)
     {
         try
         {
-            // Convert input strings to ASCII byte arrays
-            byte[] minBytes = Encoding.ASCII.GetBytes(min);
-            byte[] maxBytes = Encoding.ASCII.GetBytes(max);
             byte[] errorStrBytes = new byte[1024]; // Allocate a buffer for the error string
-
-            fixed (byte* minPtr = minBytes)
-            fixed (byte* maxPtr = maxBytes)
             fixed (byte* errStrPtr = errorStrBytes)
             {
                 // Call the native C++ function
-                byte* resultPtr = CppDllMethods.FiniteFieldMethods.random_prime(minPtr, maxPtr, errStrPtr);
+                byte* resultPtr = CppDllMethods.FiniteFieldMethods.random_prime(errStrPtr);
 
                 if (resultPtr == null)
                     throw new Exception("Result pointer is null, indicating a failure in native code.");
@@ -180,21 +174,17 @@ public class FiniteFieldWrapper
     }
     
     
-    public static unsafe string random_number(string min, string max, ref string errStr)
+    public static unsafe string random_number(ref string errStr)
     {
         try
         {
             // Convert input strings to ASCII byte arrays
-            byte[] minBytes = Encoding.ASCII.GetBytes(min);
-            byte[] maxBytes = Encoding.ASCII.GetBytes(max);
             byte[] errorStrBytes = new byte[1024]; // Allocate a buffer for the error string
 
-            fixed (byte* minPtr = minBytes)
-            fixed (byte* maxPtr = maxBytes)
             fixed (byte* errStrPtr = errorStrBytes)
             {
                 // Call the native C++ function
-                byte* resultPtr = CppDllMethods.FiniteFieldMethods.random_number(minPtr, maxPtr, errStrPtr);
+                byte* resultPtr = CppDllMethods.FiniteFieldMethods.random_number(errStrPtr);
 
                 if (resultPtr == null)
                     throw new Exception("Result pointer is null, indicating a failure in native code.");
