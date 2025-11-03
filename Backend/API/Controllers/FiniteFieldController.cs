@@ -105,7 +105,7 @@ namespace API.Controllers
             }
 
             string errorStr = string.Empty;
-            var result = FiniteFieldWrapper.random_number(request.min, request.min, ref errorStr);
+            var result = FiniteFieldWrapper.random_number(request.min, request.max, ref errorStr);
             var resultDict = new Dictionary<string, string>
             {
                 { "result", result}

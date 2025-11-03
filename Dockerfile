@@ -34,7 +34,8 @@ ENTRYPOINT ["dotnet", "API.dll"]
 
 # front
 # Use a Node.js image as the base image
-FROM node:20-alpine AS build
+# front
+FROM node:20-alpine AS frontend-final
 
 # Set the working directory inside the container
 WORKDIR /app
@@ -47,18 +48,8 @@ RUN npm install
 
 # Copy the rest of the application code from the "front" folder
 COPY front/ ./
-
 # Build the application
-RUN npm run build
-
-# Use an nginx image for serving the build
-FROM nginx:1.25-alpine
-
-# Copy the built files from the build stage to nginx's default directory
-COPY --from=build /app/dist /usr/share/nginx/html
-
-# Expose the port nginx will serve on
+ENV PORT=3000
 EXPOSE 3000
 
-# Start nginx
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["npm", "run", "dev"]

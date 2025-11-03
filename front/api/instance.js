@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const mathServer = axios.create({
-    baseURL: 'http://4.211.248.154:8080/S/',
+    baseURL: 'http://localhost:8080/S/',
 })
 
 mathServer.interceptors.response.use(res => {
