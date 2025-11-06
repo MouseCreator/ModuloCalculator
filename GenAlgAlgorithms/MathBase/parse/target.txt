@@ -1,0 +1,9 @@
+S ::= E 
+E ::= F+F | F – F | F 
+F ::= T * T | T % T | T / T | T
+T ::= M ^ M | M
+M ::= ( E ) | –E | +E | P | L
+A ::= B | empty
+B ::= E | E , E 
+P ::= identifier | number
+L ::= identifier (A) 
