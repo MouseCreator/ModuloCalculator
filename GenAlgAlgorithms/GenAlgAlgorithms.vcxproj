@@ -130,6 +130,7 @@
     <ClInclude Include="doctest.h" />
     <ClInclude Include="MathBase\parse\command.h" />
     <ClInclude Include="MathBase\parse\errloc.h" />
+    <ClInclude Include="MathBase\parse\FlexLexer.h" />
     <ClInclude Include="MathBase\parse\location.hh" />
     <ClInclude Include="MathBase\parse\parser.hpp" />
     <ClInclude Include="MathBase\parse\position.hh" />

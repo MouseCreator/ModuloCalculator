@@ -27,18 +27,17 @@ std::istringstream loadFile(const std::string& name, bool& success) {
     success = true;
     return std::istringstream(content);
 }
-
-int main(int argc, char** argv) {
+TEST_CASE("Parse input test") {
     bool isOpened = false;
     std::string filename = "input.txt";
     std::istringstream stream = loadFile(filename, isOpened);
     if (!isOpened) {
         std::cout << "Cannot open " << filename << std::endl;
     }
+	CHECK(isOpened == true);
     Interpreter i;
     i.switchInputStream(&stream);
     i.configLocation(filename, true, true);
     int res = i.parse();
-    std::cout << "Parse complete. Result = " << res << std::endl << i.str() << std::endl;
-    return res;
+    CHECK(res == 0);
 }
