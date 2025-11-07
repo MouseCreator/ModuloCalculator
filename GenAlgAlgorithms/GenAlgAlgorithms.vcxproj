@@ -128,9 +128,26 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="doctest.h" />
+    <ClInclude Include="MathBase\parse\command.h" />
+    <ClInclude Include="MathBase\parse\errloc.h" />
+    <ClInclude Include="MathBase\parse\FlexLexer.h" />
+    <ClInclude Include="MathBase\parse\location.hh" />
+    <ClInclude Include="MathBase\parse\parser.hpp" />
+    <ClInclude Include="MathBase\parse\position.hh" />
+    <ClInclude Include="MathBase\parse\scanner.h" />
+    <ClInclude Include="MathBase\parse\stack.hh" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="MathBase\parse\command.cpp" />
+    <ClCompile Include="MathBase\parse\errloc.cpp" />
+    <ClCompile Include="MathBase\parse\interpreter.cpp" />
+    <ClCompile Include="MathBase\parse\parser.cpp" />
+    <ClCompile Include="MathBase\parse\scanner.cpp" />
     <ClCompile Include="test.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MathBase\parse\parser.y" />
+    <None Include="MathBase\parse\scanner.l" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
