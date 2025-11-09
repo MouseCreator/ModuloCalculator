@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClInclude Include="doctest.h" />
     <ClInclude Include="MathBase\CalculationOfSquareRoot.h" />
+    <ClInclude Include="MathBase\Euler.h" />
     <ClInclude Include="MathBase\Exponent.h" />
     <ClInclude Include="MathBase\FiniteField.h" />
     <ClInclude Include="MathBase\FiniteNumber.h" />
@@ -139,6 +140,7 @@
     <ClInclude Include="MathBase\merr\errpick.h" />
     <ClInclude Include="MathBase\merr\MathError.h" />
     <ClInclude Include="MathBase\merr\MathErrorType.h" />
+    <ClInclude Include="MathBase\MillerRabin.h" />
     <ClInclude Include="MathBase\parse\command.h" />
     <ClInclude Include="MathBase\parse\errloc.h" />
     <ClInclude Include="MathBase\parse\FlexLexer.h" />
@@ -147,11 +149,13 @@
     <ClInclude Include="MathBase\parse\position.hh" />
     <ClInclude Include="MathBase\parse\scanner.h" />
     <ClInclude Include="MathBase\parse\stack.hh" />
+    <ClInclude Include="MathBase\Pollard.h" />
     <ClInclude Include="MathBase\PositiveNumber.h" />
     <ClInclude Include="MathBase\SignedNumber.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MathBase\CalculationOfSquareRoot.cpp" />
+    <ClCompile Include="MathBase\Euler.cpp" />
     <ClCompile Include="MathBase\GCD.cpp" />
     <ClCompile Include="MathBase\Logarithm.cpp" />
     <ClCompile Include="MathBase\merr\errloc.cpp" />
