@@ -142,7 +142,6 @@
     <ClInclude Include="MathBase\merr\MathErrorType.h" />
     <ClInclude Include="MathBase\MillerRabin.h" />
     <ClInclude Include="MathBase\parse\command.h" />
-    <ClInclude Include="MathBase\parse\errloc.h" />
     <ClInclude Include="MathBase\parse\FlexLexer.h" />
     <ClInclude Include="MathBase\parse\location.hh" />
     <ClInclude Include="MathBase\parse\parser.hpp" />
@@ -164,7 +163,6 @@
     <ClCompile Include="MathBase\merr\MathError.cpp" />
     <ClCompile Include="MathBase\merr\MathErrorType.cpp" />
     <ClCompile Include="MathBase\parse\command.cpp" />
-    <ClCompile Include="MathBase\parse\errloc.cpp" />
     <ClCompile Include="MathBase\parse\interpreter.cpp" />
     <ClCompile Include="MathBase\parse\parser.cpp" />
     <ClCompile Include="MathBase\parse\scanner.cpp" />

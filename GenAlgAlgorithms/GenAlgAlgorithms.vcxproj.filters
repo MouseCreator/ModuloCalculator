@@ -21,9 +21,6 @@
     <ClInclude Include="MathBase\parse\command.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MathBase\parse\errloc.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="MathBase\parse\location.hh">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -42,22 +39,13 @@
     <ClInclude Include="MathBase\parse\FlexLexer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MathBase\FiniteField.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MathBase\FiniteNumber.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MathBase\GCD.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MathBase\PositiveNumber.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MathBase\SignedNumber.h">
+    <ClInclude Include="MathBase\merr\errloc.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MathBase\merr\ErrorManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MathBase\merr\errpick.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MathBase\merr\MathError.h">
@@ -66,16 +54,22 @@
     <ClInclude Include="MathBase\merr\MathErrorType.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MathBase\merr\errloc.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MathBase\merr\errpick.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="MathBase\CalculationOfSquareRoot.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="MathBase\Euler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="MathBase\Exponent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MathBase\FiniteField.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MathBase\FiniteNumber.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MathBase\GCD.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MathBase\Logarithm.h">
@@ -87,7 +81,10 @@
     <ClInclude Include="MathBase\Pollard.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MathBase\Euler.h">
+    <ClInclude Include="MathBase\PositiveNumber.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MathBase\SignedNumber.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -96,9 +93,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MathBase\parse\command.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MathBase\parse\errloc.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MathBase\parse\interpreter.cpp">
@@ -110,10 +104,13 @@
     <ClCompile Include="MathBase\parse\scanner.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MathBase\GCD.cpp">
+    <ClCompile Include="MathBase\merr\errloc.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MathBase\merr\ErrorManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MathBase\merr\errpick.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MathBase\merr\MathError.cpp">
@@ -122,19 +119,16 @@
     <ClCompile Include="MathBase\merr\MathErrorType.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MathBase\merr\errloc.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MathBase\merr\errpick.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="MathBase\CalculationOfSquareRoot.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MathBase\Logarithm.cpp">
+    <ClCompile Include="MathBase\Euler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MathBase\Euler.cpp">
+    <ClCompile Include="MathBase\GCD.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MathBase\Logarithm.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
