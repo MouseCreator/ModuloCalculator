@@ -21,6 +21,7 @@ namespace MathBase {
 		FiniteNumber readValue() const;
 		void clearValue();
 		void writeValue(FiniteNumber n);
+		std::optional<FiniteNumber> safeReadValue() const;
 
 
 	private:
