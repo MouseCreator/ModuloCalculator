@@ -10,14 +10,17 @@ namespace MathBase {
 
 	class FiniteFieldCalculator : public ASTVisitor {
 	private:
-		FiniteNumber* _value;
 		FiniteFieldContext context;
+		FiniteNumber* _value;
 	public:
 		void visitNumber(NumberNode& number) override;
 		void visitVariable(VariableNode& variable) override;
 		void visitOperation(OperationNode& operation) override;
 		void visitUnary(UnaryNode& operation) override;
 		void visitFunction(FunctionNode& func) override;
+		FiniteNumber readValue() const;
+		void clearValue();
+		void writeValue(FiniteNumber n);
 
 
 	private:
