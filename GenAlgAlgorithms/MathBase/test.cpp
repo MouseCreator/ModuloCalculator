@@ -2,9 +2,9 @@
 #include "doctest.h"
 #include <iostream>
 
-#include "MathBase/parse/scanner.h"
-#include "MathBase/parse/parser.hpp"
-#include "MathBase/parse/interpreter.h"
+#include "parse/scanner.h"
+#include "parse/parser.hpp"
+#include "parse/interpreter.h"
 #include <fstream>
 #include <sstream>
 #include <string>
@@ -29,7 +29,7 @@ std::istringstream loadFile(const std::string& name, bool& success) {
 }
 TEST_CASE("Parse input test") {
     bool isOpened = false;
-    std::string filename = "input.txt";
+    std::string filename = "MathBase/test_files/input.txt";
     std::istringstream stream = loadFile(filename, isOpened);
     if (!isOpened) {
         std::cout << "Cannot open " << filename << std::endl;

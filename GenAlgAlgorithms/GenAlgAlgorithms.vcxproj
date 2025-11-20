@@ -134,6 +134,7 @@
     <ClInclude Include="MathBase\AST_FiniteFieldCalculator.h" />
     <ClInclude Include="MathBase\AST_Operation.h" />
     <ClInclude Include="MathBase\CalculationOfSquareRoot.h" />
+    <ClInclude Include="MathBase\doctest.h" />
     <ClInclude Include="MathBase\Euler.h" />
     <ClInclude Include="MathBase\Exponent.h" />
     <ClInclude Include="MathBase\FiniteField.h" />
@@ -178,8 +179,8 @@
     <ClCompile Include="MathBase\parse\interpreter.cpp" />
     <ClCompile Include="MathBase\parse\parser.cpp" />
     <ClCompile Include="MathBase\parse\scanner.cpp" />
+    <ClCompile Include="MathBase\test.cpp" />
     <ClCompile Include="MathBase\utils\StringPrintable.cpp" />
-    <ClCompile Include="test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="MathBase\parse\parser.y" />
