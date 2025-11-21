@@ -53,6 +53,29 @@ namespace API.Controllers
 
             return Ok(ApiResponse<Dictionary<string, string>>.SuccessResponse(resultDict));
         }
+
+        [HttpPost("number_factorization")]
+        public ActionResult<Dictionary<string, string>> Factorize([FromBody] NumberFactorizationRequest request)
+        {
+            if (request == null)
+            {
+                return BadRequest("Request cannot be null.");
+            }
+
+            string errorStr = string.Empty;
+            var result = FiniteFieldWrapper.number_factorization(request.n, ref errorStr);
+            var resultDict = new Dictionary<string, string>
+            {
+                { "result", result}
+            };
+
+            if (!string.IsNullOrEmpty(errorStr))
+            {
+                return BadRequest(ApiResponse<string>.ErrorResponse(errorStr));
+            }
+
+            return Ok(ApiResponse<Dictionary<string, string>>.SuccessResponse(resultDict));
+        }
         
     }
 
@@ -66,5 +89,10 @@ namespace API.Controllers
     {
         public string? min { get; set; }
         public string? max { get; set; }
+    }
+
+    public class NumberFactorizationRequest
+    {
+        public string? n { get; set; }
     }
 }
