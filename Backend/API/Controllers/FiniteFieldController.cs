@@ -118,6 +118,25 @@ namespace API.Controllers
 
             return Ok(ApiResponse<Dictionary<string, string>>.SuccessResponse(resultDict));
         }
+
+        [HttpPost("prime_test")]
+        public ActionResult<string> Test([FromBody] PrimeTestRequest request)
+        {
+            if (request == null)
+            {
+                return BadRequest("Request cannot be null.");
+            }
+
+            string errorStr = string.Empty;
+            var result = FiniteFieldWrapper.prime_test(request.number, request.iterations, ref errorStr);
+
+            if (!string.IsNullOrEmpty(errorStr))
+            {
+                return BadRequest(ApiResponse<string>.ErrorResponse(errorStr));
+            }
+
+            return Ok(ApiResponse<string>.SuccessResponse(result));
+        }
         
     }
 
@@ -148,5 +167,11 @@ namespace API.Controllers
     {
         public string? min { get; set; }
         public string? max { get; set; }
+    }
+
+    public class PrimeTestRequest
+    {
+        public string? number { get; set; }
+        public string? iterations { get; set; }
     }
 }
