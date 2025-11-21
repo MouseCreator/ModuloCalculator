@@ -76,6 +76,48 @@ namespace API.Controllers
 
             return Ok(ApiResponse<Dictionary<string, string>>.SuccessResponse(resultDict));
         }
+
+        [HttpPost("number_order")]
+        public ActionResult<string> Order([FromBody] NumberOrderRequest request)
+        {
+            if (request == null)
+            {
+                return BadRequest("Request cannot be null.");
+            }
+
+            string errorStr = string.Empty;
+            var result = FiniteFieldWrapper.number_order(request.number, request.n, ref errorStr);
+
+            if (!string.IsNullOrEmpty(errorStr))
+            {
+                return BadRequest(ApiResponse<string>.ErrorResponse(errorStr));
+            }
+
+            return Ok(ApiResponse<string>.SuccessResponse(result));
+        }
+        
+        [HttpPost("random_number")]
+        public ActionResult<Dictionary<string, string>> Random([FromBody] RandomNumberRequest request)
+        {
+            if (request == null)
+            {
+                return BadRequest("Request cannot be null.");
+            }
+
+            string errorStr = string.Empty;
+            var result = FiniteFieldWrapper.random_number(ref errorStr);
+            var resultDict = new Dictionary<string, string>
+            {
+                { "result", result}
+            };
+
+            if (!string.IsNullOrEmpty(errorStr))
+            {
+                return BadRequest(ApiResponse<string>.ErrorResponse(errorStr));
+            }
+
+            return Ok(ApiResponse<Dictionary<string, string>>.SuccessResponse(resultDict));
+        }
         
     }
 
@@ -94,5 +136,17 @@ namespace API.Controllers
     public class NumberFactorizationRequest
     {
         public string? n { get; set; }
+    }
+
+    public class NumberOrderRequest
+    {
+        public string? number { get; set; }
+        public string? n { get; set; }
+    }
+    
+    public class RandomNumberRequest
+    {
+        public string? min { get; set; }
+        public string? max { get; set; }
     }
 }
