@@ -156,6 +156,7 @@
     <ClInclude Include="MathBase\parse\stack.hh" />
     <ClInclude Include="MathBase\Pollard.h" />
     <ClInclude Include="MathBase\PositiveNumber.h" />
+    <ClInclude Include="MathBase\RNG.h" />
     <ClInclude Include="MathBase\SignedNumber.h" />
     <ClInclude Include="MathBase\utils\StringPrintable.h" />
   </ItemGroup>
@@ -179,6 +180,7 @@
     <ClCompile Include="MathBase\parse\interpreter.cpp" />
     <ClCompile Include="MathBase\parse\parser.cpp" />
     <ClCompile Include="MathBase\parse\scanner.cpp" />
+    <ClCompile Include="MathBase\RNG.cpp" />
     <ClCompile Include="MathBase\test.cpp" />
     <ClCompile Include="MathBase\utils\StringPrintable.cpp" />
   </ItemGroup>
