@@ -219,4 +219,13 @@ namespace MathBase {
 		raiseError("Finite field visitor got no value after visiting " + node->str(), &node->loc());
 		return FiniteNumber();
 	}
+
+	std::optional<SignedNumber> FiniteFieldCalculator::_visitSigned(ASTNode* target) {
+		IntegerCalculator integerCalculator;
+		target->acceptVisitor(&integerCalculator);
+		if (integerCalculator.hasError()) {
+			setError(integerCalculator.getError());
+		}
+		return integerCalculator.safeReadValue();
+	}
 }

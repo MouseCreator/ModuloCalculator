@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -137,10 +137,12 @@
     <ClInclude Include="MathBase\CalculationOfSquareRoot.h" />
     <ClInclude Include="MathBase\doctest.h" />
     <ClInclude Include="MathBase\Euler.h" />
+    <ClInclude Include="MathBase\Executor.h" />
     <ClInclude Include="MathBase\Exponent.h" />
     <ClInclude Include="MathBase\FiniteField.h" />
     <ClInclude Include="MathBase\FiniteNumber.h" />
     <ClInclude Include="MathBase\GCD.h" />
+    <ClInclude Include="MathBase\InterpretationManager.h" />
     <ClInclude Include="MathBase\Logarithm.h" />
     <ClInclude Include="MathBase\merr\errloc.h" />
     <ClInclude Include="MathBase\merr\ErrorManager.h" />
@@ -150,6 +152,7 @@
     <ClInclude Include="MathBase\MillerRabin.h" />
     <ClInclude Include="MathBase\parse\command.h" />
     <ClInclude Include="MathBase\parse\FlexLexer.h" />
+    <ClInclude Include="MathBase\parse\interpreter.h" />
     <ClInclude Include="MathBase\parse\location.hh" />
     <ClInclude Include="MathBase\parse\parser.hpp" />
     <ClInclude Include="MathBase\parse\position.hh" />
@@ -171,6 +174,7 @@
     <ClCompile Include="MathBase\CalculationOfSquareRoot.cpp" />
     <ClCompile Include="MathBase\Euler.cpp" />
     <ClCompile Include="MathBase\GCD.cpp" />
+    <ClCompile Include="MathBase\InterpretationManager.cpp" />
     <ClCompile Include="MathBase\Logarithm.cpp" />
     <ClCompile Include="MathBase\merr\errloc.cpp" />
     <ClCompile Include="MathBase\merr\ErrorManager.cpp" />
@@ -183,6 +187,7 @@
     <ClCompile Include="MathBase\parse\scanner.cpp" />
     <ClCompile Include="MathBase\test.cpp" />
     <ClCompile Include="MathBase\utils\StringPrintable.cpp" />
+    <ClCompile Include="MathBase\Wrapper.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="MathBase\parse\parser.y" />

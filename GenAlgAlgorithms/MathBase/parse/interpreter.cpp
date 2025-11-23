@@ -40,6 +40,16 @@ std::string Interpreter::str() const {
     return s.str();
 }
 
+std::size_t Interpreter::total_asts() const {
+    return m_asts.size();
+}
+AST* Interpreter::get_ast(std::size_t index) const {
+    if (index < 0 || index >= m_asts.size()) {
+        return nullptr;
+    }
+    return m_asts[index];
+}
+
 void Interpreter::switchInputStream(std::istream *is) {
     m_scanner.switch_streams(is, NULL);
     m_asts.clear();    
@@ -101,10 +111,18 @@ std::vector<ASTNode*> Interpreter::get_allocated_nodes() {
     return m_allocated_nodes;
 }
 
-void Interpreter::setError(std::string type, std::string error) {
-    std::cout << "ERROR: " << error << std::endl;
+merr::MathError Interpreter::getError() {
+    return this->m_errorFlag.get();
 }
-
 bool Interpreter::hasError() {
-    return false;
+    return this->m_errorFlag.hasError();
+}
+void Interpreter::setError(std::string type, std::string error) {
+    merr::MathErrorType mathErrorType = merr::toErrorType(type);
+    merr::LocationStruct loc = locationStruct();
+    merr::MathError mathError = merr::MathError(mathErrorType, error, &loc);
+    m_errorFlag.set(mathError);
+}
+void Interpreter::clrError() {
+    this->m_errorFlag.clr();
 }

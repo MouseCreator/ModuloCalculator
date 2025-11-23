@@ -108,6 +108,15 @@
     <ClInclude Include="MathBase\AST_Integer_Calculator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="MathBase\Executor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MathBase\InterpretationManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MathBase\parse\interpreter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MathBase\parse\command.cpp">
@@ -174,6 +183,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MathBase\AST_Integer_Calculator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MathBase\InterpretationManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MathBase\Wrapper.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
