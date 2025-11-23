@@ -164,10 +164,12 @@
     <ClInclude Include="MathBase\parse\stack.hh" />
     <ClInclude Include="MathBase\Pollard.h" />
     <ClInclude Include="MathBase\PositiveNumber.h" />
+    <ClInclude Include="MathBase\PrimeGenerator.h" />
     <ClInclude Include="MathBase\PrimeTestEngine.h" />
     <ClInclude Include="MathBase\RNG.h" />
     <ClInclude Include="MathBase\SignedNumber.h" />
     <ClInclude Include="MathBase\utils\StringPrintable.h" />
+    <ClInclude Include="MathBase\utils\Validate.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MathBase\AST_Context_Type.cpp" />
@@ -195,10 +197,12 @@
     <ClCompile Include="MathBase\parse\interpreter.cpp" />
     <ClCompile Include="MathBase\parse\parser.cpp" />
     <ClCompile Include="MathBase\parse\scanner.cpp" />
+    <ClCompile Include="MathBase\PrimeGenerator.cpp" />
     <ClCompile Include="MathBase\PrimeTestEngine.cpp" />
     <ClCompile Include="MathBase\RNG.cpp" />
     <ClCompile Include="MathBase\test.cpp" />
     <ClCompile Include="MathBase\utils\StringPrintable.cpp" />
+    <ClCompile Include="MathBase\utils\Validate.cpp" />
     <ClCompile Include="MathBase\Wrapper.cpp" />
   </ItemGroup>
   <ItemGroup>
