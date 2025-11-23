@@ -179,6 +179,7 @@
     <ClCompile Include="MathBase\AST_Operation.cpp" />
     <ClCompile Include="MathBase\CalculationOfSquareRoot.cpp" />
     <ClCompile Include="MathBase\Euler.cpp" />
+    <ClCompile Include="MathBase\Executor.cpp" />
     <ClCompile Include="MathBase\FactorizationEngine.cpp" />
     <ClCompile Include="MathBase\FactorizationResult.cpp" />
     <ClCompile Include="MathBase\GCD.cpp" />
