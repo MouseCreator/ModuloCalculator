@@ -24,3 +24,4 @@ namespace MathBase {
 	private:
 		SignedNumber _visitAndGetValue(ASTNode* node);
 	};
+}
