@@ -137,7 +137,10 @@
     <ClInclude Include="MathBase\doctest.h" />
     <ClInclude Include="MathBase\Euler.h" />
     <ClInclude Include="MathBase\Exponent.h" />
+    <ClInclude Include="MathBase\FactorizationEngine.h" />
+    <ClInclude Include="MathBase\FactorizationResult.h" />
     <ClInclude Include="MathBase\FiniteField.h" />
+    <ClInclude Include="MathBase\FiniteGroup.h" />
     <ClInclude Include="MathBase\FiniteNumber.h" />
     <ClInclude Include="MathBase\GCD.h" />
     <ClInclude Include="MathBase\Logarithm.h" />
@@ -147,6 +150,7 @@
     <ClInclude Include="MathBase\merr\MathError.h" />
     <ClInclude Include="MathBase\merr\MathErrorType.h" />
     <ClInclude Include="MathBase\MillerRabin.h" />
+    <ClInclude Include="MathBase\OrderEngine.h" />
     <ClInclude Include="MathBase\parse\command.h" />
     <ClInclude Include="MathBase\parse\FlexLexer.h" />
     <ClInclude Include="MathBase\parse\location.hh" />
@@ -156,6 +160,8 @@
     <ClInclude Include="MathBase\parse\stack.hh" />
     <ClInclude Include="MathBase\Pollard.h" />
     <ClInclude Include="MathBase\PositiveNumber.h" />
+    <ClInclude Include="MathBase\PrimeTestEngine.h" />
+    <ClInclude Include="MathBase\RNG.h" />
     <ClInclude Include="MathBase\SignedNumber.h" />
     <ClInclude Include="MathBase\utils\StringPrintable.h" />
   </ItemGroup>
@@ -168,6 +174,8 @@
     <ClCompile Include="MathBase\AST_Operation.cpp" />
     <ClCompile Include="MathBase\CalculationOfSquareRoot.cpp" />
     <ClCompile Include="MathBase\Euler.cpp" />
+    <ClCompile Include="MathBase\FactorizationEngine.cpp" />
+    <ClCompile Include="MathBase\FactorizationResult.cpp" />
     <ClCompile Include="MathBase\GCD.cpp" />
     <ClCompile Include="MathBase\Logarithm.cpp" />
     <ClCompile Include="MathBase\merr\errloc.cpp" />
@@ -175,10 +183,13 @@
     <ClCompile Include="MathBase\merr\errpick.cpp" />
     <ClCompile Include="MathBase\merr\MathError.cpp" />
     <ClCompile Include="MathBase\merr\MathErrorType.cpp" />
+    <ClCompile Include="MathBase\OrderEngine.cpp" />
     <ClCompile Include="MathBase\parse\command.cpp" />
     <ClCompile Include="MathBase\parse\interpreter.cpp" />
     <ClCompile Include="MathBase\parse\parser.cpp" />
     <ClCompile Include="MathBase\parse\scanner.cpp" />
+    <ClCompile Include="MathBase\PrimeTestEngine.cpp" />
+    <ClCompile Include="MathBase\RNG.cpp" />
     <ClCompile Include="MathBase\test.cpp" />
     <ClCompile Include="MathBase\utils\StringPrintable.cpp" />
   </ItemGroup>

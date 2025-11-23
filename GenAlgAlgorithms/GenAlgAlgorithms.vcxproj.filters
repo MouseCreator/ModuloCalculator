@@ -105,6 +105,24 @@
     <ClInclude Include="MathBase\doctest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="MathBase\FactorizationEngine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MathBase\FactorizationResult.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MathBase\RNG.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MathBase\FiniteGroup.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MathBase\OrderEngine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MathBase\PrimeTestEngine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MathBase\parse\command.cpp">
@@ -168,6 +186,21 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MathBase\test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MathBase\RNG.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MathBase\FactorizationEngine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MathBase\FactorizationResult.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MathBase\OrderEngine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MathBase\PrimeTestEngine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
