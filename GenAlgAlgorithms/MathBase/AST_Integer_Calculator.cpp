@@ -1,6 +1,8 @@
 #include "AST_Integer_Calculator.h"
 #include "AST_Operation.h"
 #include "Exponent.h"
+#include "Logarithm.h"
+#include "Euler.h"
 #include <sstream>
 namespace MathBase {
 
@@ -94,7 +96,69 @@ namespace MathBase {
 		if (hasError()) {
 			return;
 		}
-		writeValue(SignedNumber());
+		std::string name = func.functionName;
+		if (func.isNamed("sqrt")) {
+			if (_validateNumArguments(func, 1)) {
+				return;
+			}
+			SignedNumber signedNumber = _visitAndGetValue(func.arguments[0]);
+			merr::ErrorPicker err;
+			PositiveNumber res = CalculationOfSquareRoot::newton_sqrt(signedNumber, err);
+			testErrorPicker(err, &func.loc());
+			writeValue(SignedNumber(res, PLUS));
+		}
+		else if (func.isNamed("eul")) {
+			if (_validateNumArguments(func, 1)) {
+				return;
+			}
+			SignedNumber signedNumber = _visitAndGetValue(func.arguments[0]);
+			if (hasError()) {
+				return;
+			}
+			if (signedNumber < SignedNumber(0)) {
+				setError(merr::MathError(merr::CALCULATION_ERROR,
+					"Cannot calculate Euler function for negative number: " + signedNumber.toString(), &func.loc()));
+			}
+			PositiveNumber positiveNumber = signedNumber.asPositive();
+			PositiveNumber res = Euler(positiveNumber);
+			writeValue(SignedNumber(res, PLUS));
+		}
+		else if (func.isNamed("kar") || func.isNamed("car")) {
+			if (_validateNumArguments(func, 1)) {
+				return;
+			}
+			SignedNumber signedNumber = _visitAndGetValue(func.arguments[0]);
+			if (hasError()) {
+				return;
+			}
+			if (signedNumber < SignedNumber(0)) {
+				setError(merr::MathError(merr::CALCULATION_ERROR,
+					"Cannot calculate Karmichael function for negative number: " + signedNumber.toString(), &func.loc()));
+			}
+			PositiveNumber positiveNumber = signedNumber.asPositive();
+			PositiveNumber res = Carmichel(positiveNumber);
+			writeValue(SignedNumber(res, PLUS));
+		}
+		else if (func.isNamed("log")) {
+			if (_validateNumArguments(func, 2)) {
+				return;
+			}
+			SignedNumber p = _visitAndGetValue(func.arguments[0]);
+			if (hasError()) {
+				return;
+			}
+			SignedNumber h = _visitAndGetValue(func.arguments[1]);
+			if (hasError()) {
+				return;
+			}
+			merr::ErrorPicker err;
+			PositiveNumber result = Logarithm::log(p, h, err);
+			testErrorPicker(err, &func.loc());
+			writeValue(SignedNumber(result, PLUS));
+		}
+		else {
+			raiseError("Unknown function: " + func.functionName, &func.loc());
+		}
 	}
 
 	SignedNumber IntegerCalculator::readValue() const {

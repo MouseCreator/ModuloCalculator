@@ -7,6 +7,7 @@ namespace MathBase {
 	class ASTVisitor {
 	protected:
 		merr::ErrorFlag errFlag;
+		bool _validateNumArguments(FunctionNode& func, int count);
 	public:
 		void setError(merr::MathError err);
 		bool hasError();
