@@ -2,6 +2,9 @@
 #include "AST_Operation.h"
 #include "AST_Integer_Calculator.h"
 #include "Exponent.h"
+#include <sstream>
+#include "Euler.h"
+#include "Logarithm.h"
 namespace MathBase {
 
 	void FiniteFieldCalculator::visitNumber(NumberNode& number) {
@@ -97,7 +100,69 @@ namespace MathBase {
 		if (hasError()) {
 			return;
 		}
-		writeValue(FiniteNumber());
+		std::string name = func.functionName;
+		if (func.isNamed("sqrt")) {
+			if (_validateNumArguments(func, 1)) {
+				return;
+			}
+			merr::ErrorPicker errorPicker;
+			FiniteNumber a = _visitAndGetValue(func.arguments[0]);
+			FiniteNumber b = CalculationOfSquareRoot::tonelli_shanks(a, errorPicker);
+			this->testErrorPicker(errorPicker, &func.loc());
+			writeValue(b);
+		}
+		else if (func.isNamed("eul")) {
+			if (_validateNumArguments(func, 1)) {
+				return;
+			}
+			std::optional<SignedNumber> signedNumberOpt = _visitSigned(func.arguments[0]);
+			if (!signedNumberOpt) { return; }
+			SignedNumber signedNumber = signedNumberOpt.value();
+			if (signedNumber < SignedNumber(0)) {
+				setError(merr::MathError(merr::CALCULATION_ERROR,
+					"Cannot calculate Euler function for negative number: " + signedNumber.toString(), &func.loc()));
+			}
+			PositiveNumber positiveNumber = signedNumber.asPositive();
+			PositiveNumber res = Euler(positiveNumber);
+			writeValue(FiniteNumber(res, context.getField().getP()));
+		}
+		else if (func.isNamed("kar") || func.isNamed("car")) {
+			if (_validateNumArguments(func, 1)) {
+				return;
+			}
+			std::optional<SignedNumber> signedNumberOpt = _visitSigned(func.arguments[0]);
+			if (!signedNumberOpt) {
+				return;
+			}
+			SignedNumber signedNumber = signedNumberOpt.value();
+			if (signedNumber < SignedNumber(0)) {
+				setError(merr::MathError(merr::CALCULATION_ERROR,
+					"Cannot calculate Karmichael function for negative number: " + signedNumber.toString(), &func.loc()));
+			}
+			PositiveNumber positiveNumber = signedNumber.asPositive();
+			PositiveNumber res = Carmichel(positiveNumber);
+			writeValue(FiniteNumber(res, context.getField().getP()));
+		}
+		else if (func.isNamed("log")) {
+			if (_validateNumArguments(func, 2)) {
+				return;
+			}
+			FiniteNumber a = _visitAndGetValue(func.arguments[0]);
+			if (hasError()) {
+				return;
+			}
+			FiniteNumber b = _visitAndGetValue(func.arguments[1]);
+			if (hasError()) {
+				return;
+			}
+			merr::ErrorPicker err;
+			PositiveNumber f = Logarithm::log(a, b, err);
+			testErrorPicker(err, &func.loc());
+			writeValue(FiniteNumber(f, context.getField().getP()));
+		}
+		else {
+			raiseError("Unknown function: " + func.functionName, &func.loc());
+		}
 	}
 
 	FiniteNumber FiniteFieldCalculator::readValue() const {
