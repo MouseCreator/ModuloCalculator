@@ -1,25 +1,94 @@
 #include "AST_Integer_Calculator.h"
 #include "AST_Operation.h"
+#include "Exponent.h"
+#include <sstream>
 namespace MathBase {
 
 	void IntegerCalculator::visitNumber(NumberNode& number) {
 		if (hasError()) {
 			return;
 		}
-		writeValue(SignedNumber());
+		SignedNumber signedNumber = SignedNumber(number.digits);
+		writeValue(signedNumber);
 	}
 	
 	void IntegerCalculator::visitOperation(OperationNode& operation) {
 		if (hasError()) {
 			return;
 		}
-		writeValue(SignedNumber());
+		std::string operationString = operation.operation;
+		Operation::BINARY_OPERATION binary = Operation::binary_from_string(operationString);
+		SignedNumber left = this->_visitAndGetValue(operation.left);
+		SignedNumber right = this->_visitAndGetValue(operation.right);
+		SignedNumber result;
+		if (hasError()) {
+			return;
+		}
+		switch (binary) {
+		case Operation::PLUS:
+			result = left + right;
+			break;
+		case Operation::MINUS:
+			result = left - right;
+			break;
+		case Operation::MULTIPLY:
+			result = left * right;
+			break;
+		case Operation::DIVIDE:
+			if (right.isZero()) {
+				setError(merr::MathError(merr::MATH_ERROR, "Division by zero", &operation.loc()));
+			}
+			else {
+				result = left / right;
+			}
+			break;
+		case Operation::EXPONENT:
+		{
+			Exponentiation exp;
+			if (right < SignedNumber(0)) {
+				std::stringstream ss;
+				ss << "Cannot use negative power in exponent: " << left.toString() << "^" << right.toString();
+				raiseError(ss.str(), &operation.loc());
+				return;
+			}
+			result = exp.fastExponentiation(left, right.asPositive());
+			break;
+		}
+		case Operation::MODULO:
+			if (right.isZero()) {
+				setError(merr::MathError(merr::MATH_ERROR, "Division by zero", &operation.loc()));
+			}
+			else {
+				result = left % right;
+			}
+			break;
+		default:
+			raiseError("Unknown binary operation: " + operationString, &operation.loc());
+		}
+		writeValue(result);
 	}
 	void IntegerCalculator::visitUnary(UnaryNode& operation) {
 		if (hasError()) {
 			return;
 		}
-		writeValue(SignedNumber());
+		std::string operationString = operation.operation;
+		Operation::UNARY_OPERATION unary = Operation::unary_from_string(operationString);
+		SignedNumber target = this->_visitAndGetValue(operation.target);
+		SignedNumber result;
+		if (hasError()) {
+			return;
+		}
+		switch (unary) {
+		case Operation::UPLUS:
+			result = target;
+			break;
+		case Operation::UMINUS:
+			result = SignedNumber() - target;
+			break;
+		default:
+			raiseError("Unknown unary operation: " + operationString, &operation.loc());
+		}
+		writeValue(result);
 	}
 	void IntegerCalculator::visitFunction(FunctionNode& func) {
 		if (hasError()) {
