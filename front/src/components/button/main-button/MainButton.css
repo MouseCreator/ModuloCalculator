@@ -1,0 +1,8 @@
+.main-button {
+    background-color: rgba(0,0,0,0);
+    color: #00A2ED;
+    font-weight: 600;
+    font-size: 32px;
+    border: none;
+    cursor: pointer;
+}

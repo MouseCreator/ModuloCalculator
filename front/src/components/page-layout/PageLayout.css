@@ -1,0 +1,13 @@
+.page-layout{
+    width: calc(100vw - 20px);
+    background-color: #2C3E50;
+}
+
+.page-layout-default {
+    height: 140vh;
+}
+
+.page-layout-main {
+    height: 100vh;
+    width: 100vw;
+}
