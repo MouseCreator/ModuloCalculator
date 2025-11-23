@@ -27,6 +27,8 @@ namespace MathBase {
 
 
 	private:
+		FiniteNumber _visitAndGetValue(ASTNode* node);
+		std::optional<SignedNumber> _visitSigned(ASTNode* node);
 	};
 
 }
