@@ -30,4 +30,15 @@ namespace MathBase {
 		setError(merr::MathError(type, p.getMessage(), loc));
 		return true;
 	}
+	bool ASTVisitor::_validateNumArguments(FunctionNode& func, int count) {
+		std::string name = func.functionName;
+		int actual = func.num_argumnets();
+		if (actual != count) {
+			std::stringstream ss;
+			ss << "Unexpected number of arguments for function " << name << ". Expected " << count << ", but got " << actual;
+			raiseError(ss.str(), &func.loc());
+			return true;
+		}
+		return false;
+	}
 }

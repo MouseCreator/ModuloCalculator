@@ -159,10 +159,7 @@ B : E                              { $$ = std::vector<ASTNode*>(); $$.emplace_ba
   | B COMMA E                      { $$ = $1; $$.emplace_back($3); }
   ;
 
-P : IDENTIFIER                     { 
-    $$ = new VariableNode($1, driver.locationStruct()); driver.allocate($$);
-                                   }
-  | NUMBER                         { 
+P : NUMBER                         { 
     $$ = new NumberNode($1, driver.locationStruct()); driver.allocate($$);
                                    }
   ;

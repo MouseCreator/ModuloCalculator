@@ -75,19 +75,6 @@ namespace MathBase {
 	merr::LocationStruct& NumberNode::loc() {
 		return m_loc;
 	}
-	VariableNode::VariableNode(std::string var_name, merr::LocationStruct location) {
-		this->var_name = var_name;
-		this->m_loc = location;
-	}
-	std::string VariableNode::str() {
-		return var_name;
-	}
-	void VariableNode::acceptVisitor(ASTVisitor* visitor) {
-		visitor->visitVariable(*this);
-	}
-	merr::LocationStruct& VariableNode::loc() {
-		return m_loc;
-	}
 	std::size_t FunctionNode::num_argumnets() {
 		return arguments.size();
 	}

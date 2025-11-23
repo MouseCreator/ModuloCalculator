@@ -6,7 +6,7 @@
 
 #include "scanner.h"
 #include "location.hh"
-#include "errloc.h"
+#include "../merr/MathError.h"
 
 #include "parser.hpp"
 
@@ -43,13 +43,25 @@ public:
      * Print AST
      */
     std::string str() const;
+    
+    /**
+    * Returns number of Abstract Syntax Trees generated from input string
+    */
+    std::size_t total_asts() const;
+
+    /**
+    * Returns Abstract Syntax Tree with given index generated from input string. nullptr if the index does not exist
+    */
+    AST* get_ast(std::size_t i) const;
 
     std::vector<AST*> get_asts();
     std::vector<ASTNode*> get_allocated_nodes();
 
     void allocate(ASTNode* node);
-    void setError(std::string type, std::string error);
+    merr::MathError getError();
     bool hasError();
+    void setError(std::string type, std::string error);
+    void clrError();
     /**
      * Switch scanner input stream. Default is standard input (std::cin).
      * It will also reset AST.
@@ -85,6 +97,7 @@ private:
     bool m_track_filename;
     bool m_track_line;
     std::vector<ASTNode*> m_allocated_nodes;
+    merr::ErrorFlag m_errorFlag;
 };
 
 }

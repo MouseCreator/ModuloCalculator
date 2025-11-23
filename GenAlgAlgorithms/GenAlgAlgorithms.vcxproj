@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -132,10 +132,12 @@
     <ClInclude Include="MathBase\AST_Context_Type.h" />
     <ClInclude Include="MathBase\AST_Core.h" />
     <ClInclude Include="MathBase\AST_FiniteFieldCalculator.h" />
+    <ClInclude Include="MathBase\AST_Integer_Calculator.h" />
     <ClInclude Include="MathBase\AST_Operation.h" />
     <ClInclude Include="MathBase\CalculationOfSquareRoot.h" />
     <ClInclude Include="MathBase\doctest.h" />
     <ClInclude Include="MathBase\Euler.h" />
+    <ClInclude Include="MathBase\Executor.h" />
     <ClInclude Include="MathBase\Exponent.h" />
     <ClInclude Include="MathBase\FactorizationEngine.h" />
     <ClInclude Include="MathBase\FactorizationResult.h" />
@@ -143,6 +145,7 @@
     <ClInclude Include="MathBase\FiniteGroup.h" />
     <ClInclude Include="MathBase\FiniteNumber.h" />
     <ClInclude Include="MathBase\GCD.h" />
+    <ClInclude Include="MathBase\InterpretationManager.h" />
     <ClInclude Include="MathBase\Logarithm.h" />
     <ClInclude Include="MathBase\merr\errloc.h" />
     <ClInclude Include="MathBase\merr\ErrorManager.h" />
@@ -153,6 +156,7 @@
     <ClInclude Include="MathBase\OrderEngine.h" />
     <ClInclude Include="MathBase\parse\command.h" />
     <ClInclude Include="MathBase\parse\FlexLexer.h" />
+    <ClInclude Include="MathBase\parse\interpreter.h" />
     <ClInclude Include="MathBase\parse\location.hh" />
     <ClInclude Include="MathBase\parse\parser.hpp" />
     <ClInclude Include="MathBase\parse\position.hh" />
@@ -160,10 +164,12 @@
     <ClInclude Include="MathBase\parse\stack.hh" />
     <ClInclude Include="MathBase\Pollard.h" />
     <ClInclude Include="MathBase\PositiveNumber.h" />
+    <ClInclude Include="MathBase\PrimeGenerator.h" />
     <ClInclude Include="MathBase\PrimeTestEngine.h" />
     <ClInclude Include="MathBase\RNG.h" />
     <ClInclude Include="MathBase\SignedNumber.h" />
     <ClInclude Include="MathBase\utils\StringPrintable.h" />
+    <ClInclude Include="MathBase\utils\Validate.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MathBase\AST_Context_Type.cpp" />
@@ -171,12 +177,15 @@
     <ClCompile Include="MathBase\AST_FiniteFieldCalculator.cpp" />
     <ClCompile Include="MathBase\AST_GenericVisitor.cpp" />
     <ClCompile Include="MathBase\AST_Generic_Visitor.h" />
+    <ClCompile Include="MathBase\AST_Integer_Calculator.cpp" />
     <ClCompile Include="MathBase\AST_Operation.cpp" />
     <ClCompile Include="MathBase\CalculationOfSquareRoot.cpp" />
     <ClCompile Include="MathBase\Euler.cpp" />
+    <ClCompile Include="MathBase\Executor.cpp" />
     <ClCompile Include="MathBase\FactorizationEngine.cpp" />
     <ClCompile Include="MathBase\FactorizationResult.cpp" />
     <ClCompile Include="MathBase\GCD.cpp" />
+    <ClCompile Include="MathBase\InterpretationManager.cpp" />
     <ClCompile Include="MathBase\Logarithm.cpp" />
     <ClCompile Include="MathBase\merr\errloc.cpp" />
     <ClCompile Include="MathBase\merr\ErrorManager.cpp" />
@@ -188,10 +197,13 @@
     <ClCompile Include="MathBase\parse\interpreter.cpp" />
     <ClCompile Include="MathBase\parse\parser.cpp" />
     <ClCompile Include="MathBase\parse\scanner.cpp" />
+    <ClCompile Include="MathBase\PrimeGenerator.cpp" />
     <ClCompile Include="MathBase\PrimeTestEngine.cpp" />
     <ClCompile Include="MathBase\RNG.cpp" />
     <ClCompile Include="MathBase\test.cpp" />
     <ClCompile Include="MathBase\utils\StringPrintable.cpp" />
+    <ClCompile Include="MathBase\utils\Validate.cpp" />
+    <ClCompile Include="MathBase\Wrapper.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="MathBase\parse\parser.y" />
