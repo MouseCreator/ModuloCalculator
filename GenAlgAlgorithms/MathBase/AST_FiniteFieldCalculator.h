@@ -13,6 +13,8 @@ namespace MathBase {
 		FiniteFieldContext context;
 		FiniteNumber* _value;
 	public:
+		FiniteFieldCalculator(FiniteFieldContext& ffc);
+		~FiniteFieldCalculator();
 		void visitNumber(NumberNode& number) override;
 		void visitVariable(VariableNode& variable) override;
 		void visitOperation(OperationNode& operation) override;
@@ -22,6 +24,7 @@ namespace MathBase {
 		void clearValue();
 		void writeValue(FiniteNumber n);
 		std::optional<FiniteNumber> safeReadValue() const;
+		FiniteFieldContext getContext() const;
 
 
 	private:
