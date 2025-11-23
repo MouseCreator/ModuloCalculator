@@ -1,0 +1,35 @@
+.app-layout {
+    padding: 20px;
+    width: calc(100% - 40px);
+    height: calc(100% - 140px);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 13px;
+    grid-row-gap: 20px;
+}
+
+.app-layout-default {
+    grid-template-rows: repeat(6, 1fr);
+}
+
+.app-layout-main {
+    grid-template-rows: repeat(4, 1fr);
+}
+
+.component {
+    background-color: #34495E;
+    box-shadow: -5px 0px 20px 0px #00000040;
+    border-radius: 20px;
+}
+
+.app-layout-default .app {
+    grid-area: 1 / 2 / 4 / 5;
+}
+
+.app-layout-main .app {
+    grid-area: 1 / 2 / 5 / 5;
+}
+
+.searchbar { grid-area: 1 / 1 / 5 / 2; }
+.logger { grid-area: 5 / 1 / 7 / 5; }
+.output { grid-area: 4 / 2 / 5 / 5; }

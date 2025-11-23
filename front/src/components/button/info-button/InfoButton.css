@@ -1,0 +1,12 @@
+.info-button {
+    font-family: 'Trebuchet MS', sans-serif;
+    height: 60px;
+    width: 60px;
+    border-radius: 35px;
+    border: none;
+    background-color: #FFFFFF;
+    color: #34495E;
+    font-weight: 600;
+    font-size: 48px;
+    cursor: pointer;
+}
