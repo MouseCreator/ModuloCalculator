@@ -16,7 +16,6 @@ namespace MathBase {
 		FiniteFieldCalculator(FiniteFieldContext& ffc);
 		~FiniteFieldCalculator();
 		void visitNumber(NumberNode& number) override;
-		void visitVariable(VariableNode& variable) override;
 		void visitOperation(OperationNode& operation) override;
 		void visitUnary(UnaryNode& operation) override;
 		void visitFunction(FunctionNode& func) override;

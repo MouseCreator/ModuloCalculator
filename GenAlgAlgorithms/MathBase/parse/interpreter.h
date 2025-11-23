@@ -6,7 +6,7 @@
 
 #include "scanner.h"
 #include "location.hh"
-#include "errloc.h"
+#include "../merr/errloc.h"
 
 #include "parser.hpp"
 

@@ -874,32 +874,24 @@ namespace  MathBase  {
 #line 875 "parser.cpp"
     break;
 
-  case 29: // P: "identifier"
+  case 29: // P: "number"
 #line 162 "parser.y"
                                    { 
-    yylhs.value.as < MathBase::ValueNode* > () = new VariableNode(yystack_[0].value.as < std::string > (), driver.locationStruct()); driver.allocate(yylhs.value.as < MathBase::ValueNode* > ());
+    yylhs.value.as < MathBase::ValueNode* > () = new NumberNode(yystack_[0].value.as < std::string > (), driver.locationStruct()); driver.allocate(yylhs.value.as < MathBase::ValueNode* > ());
                                    }
 #line 883 "parser.cpp"
     break;
 
-  case 30: // P: "number"
-#line 165 "parser.y"
-                                   { 
-    yylhs.value.as < MathBase::ValueNode* > () = new NumberNode(yystack_[0].value.as < std::string > (), driver.locationStruct()); driver.allocate(yylhs.value.as < MathBase::ValueNode* > ());
-                                   }
-#line 891 "parser.cpp"
-    break;
-
-  case 31: // L: "identifier" "(" A ")"
-#line 170 "parser.y"
+  case 30: // L: "identifier" "(" A ")"
+#line 167 "parser.y"
                                             {
     yylhs.value.as < MathBase::FunctionNode* > () = new FunctionNode(yystack_[3].value.as < std::string > (), yystack_[1].value.as < std::vector<MathBase::ASTNode*> > (), driver.transformLocation(yystack_[3].location)); driver.allocate(yylhs.value.as < MathBase::FunctionNode* > ());
 }
-#line 899 "parser.cpp"
+#line 891 "parser.cpp"
     break;
 
 
-#line 903 "parser.cpp"
+#line 895 "parser.cpp"
 
             default:
               break;
@@ -1268,11 +1260,11 @@ namespace  MathBase  {
   const signed char
    Parser ::yydefact_[] =
   {
-       2,    30,    29,     0,     0,     0,     0,     3,     4,     6,
+       2,    29,     0,     0,     0,     0,     0,     3,     4,     6,
       18,    21,    22,    23,    26,    20,    19,     0,     1,     0,
        0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
        0,    27,     0,    25,    24,     5,    12,     7,     8,     9,
-      10,    11,    13,    14,    15,    16,    17,    31,     0,    28
+      10,    11,    13,    14,    15,    16,    17,    30,     0,    28
   };
 
   const signed char
@@ -1329,7 +1321,7 @@ namespace  MathBase  {
        0,    23,    24,    24,    25,    25,    26,    27,    27,    27,
       27,    27,    27,    27,    27,    27,    27,    27,    27,    28,
       28,    28,    29,    29,    29,    30,    30,    31,    31,    32,
-      32,    33
+      33
   };
 
   const signed char
@@ -1338,7 +1330,7 @@ namespace  MathBase  {
        0,     2,     0,     1,     1,     3,     1,     3,     3,     3,
        3,     3,     3,     3,     3,     3,     3,     3,     1,     2,
        2,     1,     1,     1,     3,     1,     0,     1,     3,     1,
-       1,     4
+       4
   };
 
 
@@ -1364,7 +1356,7 @@ namespace  MathBase  {
        0,   104,   104,   107,   115,   120,   121,   124,   125,   126,
      127,   130,   133,   136,   137,   138,   139,   140,   141,   144,
      145,   146,   148,   149,   150,   154,   155,   158,   159,   162,
-     165,   170
+     167
   };
 
   void
@@ -1397,9 +1389,9 @@ namespace  MathBase  {
 
 #line 11 "parser.y"
 } //  MathBase 
-#line 1401 "parser.cpp"
+#line 1393 "parser.cpp"
 
-#line 174 "parser.y"
+#line 171 "parser.y"
 
 
 void MathBase::Parser::error(const location &loc , const std::string &message) {

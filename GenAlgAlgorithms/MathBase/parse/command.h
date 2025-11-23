@@ -62,16 +62,6 @@ namespace MathBase {
 		merr::LocationStruct& loc() override;
 		void acceptVisitor(ASTVisitor* visitor) override;
 	};
-	class VariableNode : public ValueNode {
-	private:
-		merr::LocationStruct m_loc;
-	public:
-		std::string var_name;
-		VariableNode(std::string var_name, merr::LocationStruct location);
-		std::string str() override;
-		merr::LocationStruct& loc() override;
-		void acceptVisitor(ASTVisitor* visitor) override;
-	};
 	class FunctionNode : public ASTNode {
 	private:
 		merr::LocationStruct m_loc;
