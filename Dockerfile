@@ -1,0 +1,53 @@
+#backend + math
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
+WORKDIR /app
+EXPOSE 8080
+EXPOSE 8081
+
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+ARG BUILD_CONFIGURATION=Debug
+WORKDIR /src
+
+RUN apt-get update && \
+    apt-get install -y g++ build-essential flex bison libfl-dev && \
+    rm -rf /var/lib/apt/lists/*
+
+COPY ["Backend/API/API.csproj", "Backend/API/"]
+RUN dotnet restore "Backend/API/API.csproj"
+COPY . .
+WORKDIR "/src/Backend/API"
+RUN bash prepare-cpp-binaries.sh
+RUN dotnet build "API.csproj" -c $BUILD_CONFIGURATION -o /app/build
+
+FROM build AS publish
+ARG BUILD_CONFIGURATION=Debug
+RUN dotnet publish "API.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+
+# Copy the wrapper.so file to the publish directory
+COPY --from=build /src/Backend/API/cpp-lib-binaries/wrapper.so /app/publish/
+
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "API.dll"]
+
+# front
+# Use a Node.js image as the base image
+FROM node:20-alpine AS frontend-final
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy package.json and package-lock.json from the "front" folder
+COPY front/package*.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy the rest of the application code from the "front" folder
+COPY front/ ./
+# Build the application
+ENV PORT=3000
+EXPOSE 3000
+
+CMD ["npm", "run", "dev"]
