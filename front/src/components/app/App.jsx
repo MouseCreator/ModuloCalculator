@@ -74,7 +74,7 @@ export const App = () => {
     }
 
     const openUserGuide = () => {
-        const userGuideUrl = 'https://github.com/MouseCreator/ModuloCalculator/blob/main/README.md'
+        const userGuideUrl = 'https://knu-team-modulo-calculator.atlassian.net/wiki/external/Y2JkZWQyMjhkZjA1NGU3NmE1NjQyMzAxOTM0NWFjMTU'
         window.open(userGuideUrl, '_blank')
     }
 

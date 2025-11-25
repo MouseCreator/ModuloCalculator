@@ -16,6 +16,8 @@ export const Output = () => {
     const [output, setOutput] = useState('')
 
     const onCalculateClick = async () => {
+        let prefix = firstInput + secondInput ? "," + secondInput : ""
+        prefix += ": "
         if (handler) {
             try {
                 const result = await handler(firstInput, secondInput)
@@ -26,7 +28,7 @@ export const Output = () => {
                     setOutput(result.error)
                 } else {
                     setOutput(result.data)
-                    dispatch(addResult(result.data))
+                    dispatch(addResult(prefix + result.data))
                 }
             } catch (error) {
                 console.error("Error in calculation:", error)
