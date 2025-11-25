@@ -9,8 +9,12 @@ namespace MathBase {
 		this->m_loc = location;
 	}
 	OperationNode::~OperationNode() {
-		delete left;
-		delete right;
+		if (left) {
+			delete left;
+		}
+		if (right) {
+			delete right;
+		}
 	}
 	std::string OperationNode::str() {
 		return "(" + left->str() + operation + right->str() + ")";
@@ -30,8 +34,10 @@ namespace MathBase {
 		this->m_loc = location;
 	}
 	ComparisonNode::~ComparisonNode() {
-		delete left;
-		delete right;
+		if (left)
+			delete left;
+		if (right)
+			delete right;
 	}
 	merr::LocationStruct& ComparisonNode::loc() {
 		return m_loc;

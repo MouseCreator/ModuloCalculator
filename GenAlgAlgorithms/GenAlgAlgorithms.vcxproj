@@ -168,9 +168,7 @@
     <ClInclude Include="MathBase\PrimeTestEngine.h" />
     <ClInclude Include="MathBase\RNG.h" />
     <ClInclude Include="MathBase\SignedNumber.h" />
-    <ClInclude Include="MathBase\TestEngineFiniteField.h" />
     <ClInclude Include="MathBase\utils\StringPrintable.h" />
-    <ClInclude Include="MathBase\utils\StringUtils.h" />
     <ClInclude Include="MathBase\utils\Validate.h" />
   </ItemGroup>
   <ItemGroup>

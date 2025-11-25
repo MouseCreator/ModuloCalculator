@@ -8,8 +8,8 @@ OrderResult::OrderResult(PositiveNumber order, bool generator) {
 
 std::string OrderResult::toString() {
 	std::string number = order.toString();
-	std::string generator = isGenerator ? "1" : "0";
-	return number + ":" + generator;
+	std::string generator = isGenerator ? "Generator" : "Not generator";
+	return number + ": " + generator;
 }
 
 OrderResult OrderEngine::orderAndGenerator(FiniteNumber finiteNumber, merr::Errors* err) {

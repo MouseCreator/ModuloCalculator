@@ -199,7 +199,7 @@ extern "C" char* prime_test(const char* number, const char* iterations, char* er
             Executor executor = Executor();
             bool result = executor.test_for_prime(mOpt.value(), iOpt.value(), &errors);
             resStr = new char[MAX_MESSAGE_LENGTH];
-            std::string s = result ? "Просте" : "Складне";
+            std::string s = result ? "Prime" : "Not prime";
             COPY_STR(resStr, s.c_str());
         }
         else {

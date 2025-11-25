@@ -3,7 +3,7 @@
 #include "utils/StringUtils.h"
 #include <sstream>
 TestInternalError::TestInternalError() {
-	number = -2;;
+	number = -2;
 	reason = "";
 }
 TestInternalError::TestInternalError(int number, std::string reason) {

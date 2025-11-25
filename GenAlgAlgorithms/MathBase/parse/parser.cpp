@@ -1396,9 +1396,6 @@ namespace  MathBase  {
 
 void MathBase::Parser::error(const location &loc , const std::string &message) {
     std::stringstream ss;
-    for (MathBase::ASTNode* node : driver.get_allocated_nodes()) {
-        delete node;
-    }
     driver.clear();
     if (!driver.hasError()) {
       driver.setError("parse", message);
