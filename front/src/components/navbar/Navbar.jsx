@@ -6,7 +6,7 @@ export const Navbar = () => {
     const route = useSelector(state => state.route.value)
 
     const openUserGuide = () => {
-        const userGuideUrl = 'https://drive.google.com/drive/folders/1QnukZ3SssztUVHJepGlbeGyS5saguEzR?usp=sharing'
+        const userGuideUrl = 'https://knu-team-modulo-calculator.atlassian.net/wiki/external/Y2JkZWQyMjhkZjA1NGU3NmE1NjQyMzAxOTM0NWFjMTU'
         window.open(userGuideUrl, '_blank')
     }
 

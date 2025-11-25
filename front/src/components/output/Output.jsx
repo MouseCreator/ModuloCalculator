@@ -19,11 +19,18 @@ export const Output = () => {
         if (handler) {
             try {
                 const result = await handler(firstInput, secondInput)
-                setOutput(result.data)
-                dispatch(addResult(result.data))
+                if (!result) {
+                    setOutput('Error!')
+                }
+                else if (!result.data) {
+                    setOutput(result.error)
+                } else {
+                    setOutput(result.data)
+                    dispatch(addResult(result.data))
+                }
             } catch (error) {
                 console.error("Error in calculation:", error)
-                setOutput("Error: " + error)
+                setOutput(error)
             }
         } else {
             setOutput("No handler found for this route")
