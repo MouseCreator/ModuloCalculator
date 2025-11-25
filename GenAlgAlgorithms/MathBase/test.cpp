@@ -24,6 +24,7 @@
 #include "TestEngineFiniteField.h"
 
 using namespace MathBase;
+
 TEST_CASE("Generic test") {
 
 	CHECK(10 + 15 != 35);
@@ -652,3 +653,4 @@ TEST_CASE("Square Root Test") {
 	CHECK(picker.picked() == false);
 	CHECK(actual == expected);
 }
+
