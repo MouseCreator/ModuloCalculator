@@ -6,7 +6,7 @@ export const Navbar = () => {
     const route = useSelector(state => state.route.value)
 
     const openUserGuide = () => {
-        const userGuideUrl = 'https://drive.google.com/drive/folders/1QnukZ3SssztUVHJepGlbeGyS5saguEzR?usp=sharing'
+        const userGuideUrl = 'https://github.com/MouseCreator/ModuloCalculator/blob/main/README.md'
         window.open(userGuideUrl, '_blank')
     }
 
