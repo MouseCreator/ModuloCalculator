@@ -12,11 +12,14 @@ RUN apt-get update && \
     apt-get install -y g++ build-essential flex bison libfl-dev && \
     rm -rf /var/lib/apt/lists/*
 
+RUN apt-get update && apt-get install -y dos2unix
+RUN find . -type f -print0 | xargs -0 dos2unix
+
 COPY ["Backend/API/API.csproj", "Backend/API/"]
 RUN dotnet restore "Backend/API/API.csproj"
 COPY . .
 WORKDIR "/src/Backend/API"
-RUN bash prepare-cpp-binaries.sh
+RUN dos2unix prepare-cpp-binaries.sh
 RUN dotnet build "API.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish

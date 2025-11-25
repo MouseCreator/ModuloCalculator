@@ -11,6 +11,12 @@
 
 const int MAX_MESSAGE_LENGTH = 4096;
 
+#if defined(_WIN32) || defined(_WIN64)
+#define COPY_STR(dst, src) strcpy_s((dst), MAX_MESSAGE_LENGTH, (src))
+#else
+#define COPY_STR(dst, src) strcpy((dst), (src))
+#endif
+
 void notZero(PositiveNumber positiveNumber, merr::ErrorPicker& errorPicker) {
     if (positiveNumber.isZero()) {
         errorPicker.setMessage("Unexpected zero input!");
@@ -29,11 +35,11 @@ extern "C" char* random_prime(char* errorStr)
     {
         std::string prime = PrimeGenerator::generatePrime();
         resStr = new char[MAX_MESSAGE_LENGTH];
-        strcpy_s(resStr, MAX_MESSAGE_LENGTH, prime.c_str());
+        COPY_STR(resStr, prime.c_str());
     }
     catch (const std::exception& ex)
     {
-        strcpy_s(errorStr, MAX_MESSAGE_LENGTH, ex.what());
+        COPY_STR(errorStr, ex.what());
     }
 
     return resStr;
@@ -70,15 +76,15 @@ extern "C" char* finite_field(const char* expression, const char* n, char* error
         }
         resStr = new char[MAX_MESSAGE_LENGTH];
         if (errors.hasError()) {
-            strcpy_s(errorStr, MAX_MESSAGE_LENGTH, errors.concat().c_str());
+            COPY_STR(errorStr, errors.concat().c_str());
             resStr[0] = '\0';
             return resStr;
         }
-        strcpy_s(resStr, MAX_MESSAGE_LENGTH, resultString.c_str());
+        COPY_STR(resStr, resultString.c_str());
     }
     catch (const std::exception& ex)
     {
-        strcpy_s(errorStr, MAX_MESSAGE_LENGTH, ex.what());
+        COPY_STR(errorStr, ex.what());
     }
 
     return resStr;
@@ -102,16 +108,16 @@ extern "C" char* number_factorization(const char* n, char* errorStr)
             FactorizationResult result = executor.to_factors(m, &errors);
             resStr = new char[MAX_MESSAGE_LENGTH];
             std::string s = result.toString();
-            strcpy_s(resStr, MAX_MESSAGE_LENGTH, s.c_str());
+            COPY_STR(resStr, s.c_str());
         }
         else {
             errors.addError(picker);
-            strcpy_s(errorStr, MAX_MESSAGE_LENGTH, errors.concat().c_str());
+            COPY_STR(errorStr, errors.concat().c_str());
         }
     }
     catch (const std::exception& ex)
     {
-        strcpy_s(errorStr, MAX_MESSAGE_LENGTH, ex.what());
+        COPY_STR(errorStr, ex.what());
     }
 
     return resStr;
@@ -142,21 +148,21 @@ extern "C" char* number_order(const char* number, const char* n, char* errorStr)
                 OrderResult result = executor.find_order(finite, &errors);
                 resStr = new char[MAX_MESSAGE_LENGTH];
                 std::string s = result.toString();
-                strcpy_s(resStr, MAX_MESSAGE_LENGTH, s.c_str());
+                COPY_STR(resStr, s.c_str());
             }
             else {
                 errors.addError("Internal error. The values must be valid, but got empty numbers");
-                strcpy_s(errorStr, MAX_MESSAGE_LENGTH, errors.concat().c_str());
+                COPY_STR(errorStr, errors.concat().c_str());
             }
         }
         else {
             errors.addError(picker);
-            strcpy_s(errorStr, MAX_MESSAGE_LENGTH, errors.concat().c_str());
+            COPY_STR(errorStr, errors.concat().c_str());
         }
     }
     catch (const std::exception& ex)
     {
-        strcpy_s(errorStr, MAX_MESSAGE_LENGTH, ex.what());
+        COPY_STR(errorStr, ex.what());
     }
 
     return resStr;
@@ -169,11 +175,11 @@ extern "C" char* random_number(char* errorStr)
     {
         std::string rand = RNG::generateRandomNumber();
         resStr = new char[MAX_MESSAGE_LENGTH];
-        strcpy_s(resStr, MAX_MESSAGE_LENGTH, rand.c_str());
+        COPY_STR(resStr, rand.c_str());
     }
     catch (const std::exception& ex)
     {
-        strcpy_s(errorStr, MAX_MESSAGE_LENGTH, ex.what());
+        COPY_STR(errorStr, ex.what());
     }
 
     return resStr;
@@ -194,16 +200,16 @@ extern "C" char* prime_test(const char* number, const char* iterations, char* er
             bool result = executor.test_for_prime(mOpt.value(), iOpt.value(), &errors);
             resStr = new char[MAX_MESSAGE_LENGTH];
             std::string s = result ? "1" : "0";
-            strcpy_s(resStr, MAX_MESSAGE_LENGTH, s.c_str());
+            COPY_STR(resStr, s.c_str());
         }
         else {
             errors.addError(picker);
-            strcpy_s(errorStr, MAX_MESSAGE_LENGTH, errors.concat().c_str());
+            COPY_STR(errorStr, errors.concat().c_str());
         }
     }
     catch (const std::exception& ex)
     {
-        strcpy_s(errorStr, MAX_MESSAGE_LENGTH, ex.what());
+        COPY_STR(errorStr, ex.what());
     }
 
     return resStr;
