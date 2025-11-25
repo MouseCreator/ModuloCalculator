@@ -1,4 +1,4 @@
-#backend + math
+#backend & math
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 WORKDIR /app
 EXPOSE 8080
@@ -30,24 +30,3 @@ FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "API.dll"]
-
-# front
-# Use a Node.js image as the base image
-FROM node:20-alpine AS frontend-final
-
-# Set the working directory inside the container
-WORKDIR /app
-
-# Copy package.json and package-lock.json from the "front" folder
-COPY front/package*.json ./
-
-# Install dependencies
-RUN npm install
-
-# Copy the rest of the application code from the "front" folder
-COPY front/ ./
-# Build the application
-ENV PORT=3000
-EXPOSE 3000
-
-CMD ["npm", "run", "dev"]
