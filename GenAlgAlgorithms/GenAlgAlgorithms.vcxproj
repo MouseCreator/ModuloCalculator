@@ -168,7 +168,9 @@
     <ClInclude Include="MathBase\PrimeTestEngine.h" />
     <ClInclude Include="MathBase\RNG.h" />
     <ClInclude Include="MathBase\SignedNumber.h" />
+    <ClInclude Include="MathBase\TestEngineFiniteField.h" />
     <ClInclude Include="MathBase\utils\StringPrintable.h" />
+    <ClInclude Include="MathBase\utils\StringUtils.h" />
     <ClInclude Include="MathBase\utils\Validate.h" />
   </ItemGroup>
   <ItemGroup>
@@ -201,7 +203,9 @@
     <ClCompile Include="MathBase\PrimeTestEngine.cpp" />
     <ClCompile Include="MathBase\RNG.cpp" />
     <ClCompile Include="MathBase\test.cpp" />
+    <ClCompile Include="MathBase\TestEngineFiniteField.cpp" />
     <ClCompile Include="MathBase\utils\StringPrintable.cpp" />
+    <ClCompile Include="MathBase\utils\StringUtils.cpp" />
     <ClCompile Include="MathBase\utils\Validate.cpp" />
     <ClCompile Include="MathBase\Wrapper.cpp" />
   </ItemGroup>
