@@ -441,5 +441,4 @@ Probabilistic primality test.
 Exact wording for `data` comes from the C++ library.
 
 ---
-
-That’s it. This single README gives a short user guide, basic setup instructions, and enough API info to call the backend directly if needed.
+"Sincerely, students of INF-1"
