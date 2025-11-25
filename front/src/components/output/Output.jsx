@@ -17,7 +17,6 @@ export const Output = () => {
 
     const onCalculateClick = async () => {
         let prefix = firstInput;
-        console.log(firstInput)
         prefix += secondInput ? " ," + secondInput : ""
         prefix += ": "
         if (handler) {
